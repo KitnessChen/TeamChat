@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Created by whd on 2014/11/30.
  */
-public class LoginServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
