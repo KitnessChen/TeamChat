@@ -7,21 +7,28 @@
     <welcome-file-list>
         <welcome-file>pages/front_end/index.jsp</welcome-file>
     </welcome-file-list>
-<!--TODO add mappings-->
+    <!--TODO add mappings-->
     <!--<filter>-->
     <!--<filter-name>UserFilter</filter-name>-->
     <!--<filter-class>filter.UserFilter</filter-class>-->
     <!--</filter>-->
-    <!--<servlet>-->
-    <!--<servlet-name>LoginServlet</servlet-name>-->
-    <!--<servlet-class>servlet.urlRewrite.LoginServlet</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet>-->
-    <!--<servlet-name>LogoutServlet</servlet-name>-->
-    <!--<servlet-class>servlet.urlRewrite.LogoutServlet</servlet-class>-->
-    <!--</servlet>-->
-    <!--<servlet>-->
-    <!--<servlet-name>RegisterServlet</servlet-name>-->
-    <!--<servlet-class>servlet.urlRewrite.RegisterServlet</servlet-class>-->
-    <!--</servlet>-->
+
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlet.urlRewrite.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>servlet.urlRewrite.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
 </web-app>
