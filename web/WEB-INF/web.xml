@@ -13,22 +13,39 @@
     <!--<filter-class>filter.UserFilter</filter-class>-->
     <!--</filter>-->
 
-
+    <!--URL redirect-->
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>servlet.urlRewrite.LoginServlet</servlet-class>
+        <servlet-name>RedirectLoginServlet</servlet-name>
+        <servlet-class>servlet.urlRewrite.RedirectLoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
+        <servlet-name>RedirectLoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
-    
+
     <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>servlet.urlRewrite.RegisterServlet</servlet-class>
+        <servlet-name>RedirectRegisterServlet</servlet-name>
+        <servlet-class>servlet.urlRewrite.RedirectRegisterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-name>RedirectRegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+
+
+
+    <!--TODO add mappings-->
+    <!--other servlet-->
+    <!--<servlet>-->
+        <!--<servlet-name>LoginServlet</servlet-name>-->
+        <!--<servlet-class>servlet.LoginServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet>-->
+        <!--<servlet-name>RegisterServlet</servlet-name>-->
+        <!--<servlet-class>servlet.RegisterServlet</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet>-->
+        <!--<servlet-name>LogoutServlet</servlet-name>-->
+        <!--<servlet-class>servlet.LogoutServlet</servlet-class>-->
+    <!--</servlet>-->
 </web-app>

@@ -1,4 +1,4 @@
-package servlet.urlRewrite;
+package servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,12 +9,12 @@ import java.io.IOException;
 /**
  * Created by whd on 2014/11/30.
  */
-public class RegisterServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/pages/front_end/register.jsp").forward(request, response);
+
     }
 }
