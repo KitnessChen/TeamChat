@@ -1,4 +1,4 @@
-package bsonobject;
+package dbobject;
 
 /**
  * Created by whd on 2014/12/1.

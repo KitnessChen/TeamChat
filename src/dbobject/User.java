@@ -1,6 +1,6 @@
-package bsonobject;
+package dbobject;
 
-import org.bson.BasicBSONObject;
+import com.mongodb.BasicDBObject;
 
 import java.util.Date;
 
@@ -14,7 +14,7 @@ import java.util.Date;
 *
 *
 * */
-public class User extends BasicBSONObject {
+public class User extends BasicDBObject {
     private String id;
     private String nickname;
     private String password;

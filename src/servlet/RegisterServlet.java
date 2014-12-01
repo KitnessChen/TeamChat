@@ -1,8 +1,7 @@
 package servlet;
 
-import bsonobject.User;
-import com.mongodb.DBObject;
 import db.Database;
+import dbobject.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,11 +16,15 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //TODO get parameters
 
-        User user = new User();
-        Database.getCollection("Users").save((DBObject) user);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        User user = new User();
+        user.setId("rrrl8523690");
+        user.setNickname("whd");
+        user.setWorkPosition("student");
+
+        Database.getCollection("Users").insert(user);
     }
 }

@@ -1,6 +1,6 @@
-package bsonobject;
+package dbobject;
 
-import org.bson.BasicBSONObject;
+import com.mongodb.BasicDBObject;
 import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 * }
 *
 * */
-public class Team extends BasicBSONObject {
+public class Team extends BasicDBObject {
     private String name;
     private ArrayList<ObjectId> memberList;
 
