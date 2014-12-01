@@ -20,7 +20,19 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 8.0.12" level="application_server_libraries" />
-    <orderEntry type="library" exported="" scope="PROVIDED" name="mongo-java-driver-2.12.4-javadoc" level="project" />
+    <orderEntry type="module-library" exported="" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Courses/Java Server Page/mongo-java-driver-2.12.4.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$USER_HOME$/Courses/Java Server Page/mongo-java-driver-2.12.4-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$USER_HOME$/Courses/Java Server Page/mongo-java-driver-2.12.4-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
 

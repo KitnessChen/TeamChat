@@ -11,6 +11,6 @@ import java.io.IOException;
  */
 public class RedirectLoginServlet extends RedirectServlet {
     public RedirectLoginServlet() {
-        super("pages/front_end/login.jsp");
+        super("/pages/front_end/login.jsp");
     }
 }

@@ -27,33 +27,33 @@
         <servlet-name>RedirectRegisterServlet</servlet-name>
         <servlet-class>servlet.urlRewrite.RedirectRegisterServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RedirectTeamMessageServlet</servlet-name>
+        <servlet-class>servlet.urlRewrite.RedirectTeamMessageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RedirectServlet</servlet-name>
+        <servlet-class>servlet.urlRewrite.RedirectServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RedirectRegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>RedirectTeamMessageServlet</servlet-name>
-        <servlet-class>servlet.urlRewrite.RedirectTeamMessageServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RedirectTeamMessageServlet</servlet-name>
-        <url-pattern>/team/*</url-pattern>
-    </servlet-mapping>
 
 
     <!--TODO add mappings-->
     <!--other servlet-->
     <!--<servlet>-->
-    <!--<servlet-name>LoginServlet</servlet-name>-->
-    <!--<servlet-class>servlet.LoginServlet</servlet-class>-->
+        <!--<servlet-name>LoginServlet</servlet-name>-->
+        <!--<servlet-class>servlet.LoginServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet>-->
-    <!--<servlet-name>RegisterServlet</servlet-name>-->
-    <!--<servlet-class>servlet.RegisterServlet</servlet-class>-->
+        <!--<servlet-name>RegisterServlet</servlet-name>-->
+        <!--<servlet-class>servlet.RegisterServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet>-->
-    <!--<servlet-name>LogoutServlet</servlet-name>-->
-    <!--<servlet-class>servlet.LogoutServlet</servlet-class>-->
+        <!--<servlet-name>LogoutServlet</servlet-name>-->
+        <!--<servlet-class>servlet.LogoutServlet</servlet-class>-->
     <!--</servlet>-->
 </web-app>
