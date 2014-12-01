@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d96d896-ca15-4b2a-8e82-133acec52ab2" name="Default" comment="Revert &quot;initialize project&quot;&#10;&#10;This reverts commit 2ab596dea1fa218a6437699a2d5091c75ac2df38.&#10;&#10;Conflicts:&#10;&#9;.idea/workspace.xml&#10;&#9;out/artifacts/TeamWork_war_exploded/WEB-INF/web.xml&#10;&#9;out/artifacts/TeamWork_war_exploded/pages/front_end/index.jsp&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/servlet/LoginServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/servlet/LogoutServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bsonobject/Message.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/servlet/urlRewrite/RedirectLoginServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/servlet/urlRewrite/RedirectRegisterServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/servlet/RegisterServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bsonobject/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mongo_java_driver_2_12_4_javadoc.xml" />
-      <change type="DELETED" beforePath="C:\Users\whd\Documents\GitHub\TeamWork\src\servlet\urlRewrite\LoginServlet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\whd\Documents\GitHub\TeamWork\src\servlet\urlRewrite\RegisterServlet.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamWork.iml" afterPath="$PROJECT_DIR$/TeamWork.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bsonobject/PrivateMessage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bsonobject/PublicMessage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bsonobject/Team.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bsonobject/User.java" afterPath="$PROJECT_DIR$/src/bsonobject/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TeamWork.iws" />
@@ -40,15 +32,26 @@
       <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bsonobject/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="502" max-vertical-offset="884">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1649">
+              <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
               <folding>
-                <element signature="e#248#249#0" expanded="true" />
-                <element signature="e#273#274#0" expanded="true" />
-                <element signature="e#400#401#0" expanded="true" />
-                <element signature="e#431#432#0" expanded="true" />
-                <element signature="e#594#595#0" expanded="true" />
-                <element signature="e#625#626#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#424#425#0" expanded="true" />
+                <element signature="e#449#450#0" expanded="true" />
+                <element signature="e#576#577#0" expanded="true" />
+                <element signature="e#607#608#0" expanded="true" />
+                <element signature="e#770#771#0" expanded="true" />
+                <element signature="e#801#802#0" expanded="true" />
+                <element signature="e#962#963#0" expanded="true" />
+                <element signature="e#993#994#0" expanded="true" />
+                <element signature="e#1158#1159#0" expanded="true" />
+                <element signature="e#1193#1194#0" expanded="true" />
+                <element signature="e#1380#1381#0" expanded="true" />
+                <element signature="e#1411#1412#0" expanded="true" />
+                <element signature="e#1577#1578#0" expanded="true" />
+                <element signature="e#1611#1612#0" expanded="true" />
+                <element signature="e#1794#1795#0" expanded="true" />
+                <element signature="e#1827#1828#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,9 +60,43 @@
       <file leaf-file-name="Message.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bsonobject/Message.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2225131" vertical-offset="0" max-vertical-offset="382">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.42146596" vertical-offset="26" max-vertical-offset="425">
+              <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PublicMessage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bsonobject/PublicMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrivateMessage.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bsonobject/PrivateMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+              <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Team.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bsonobject/Team.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="527">
+              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,6 +121,10 @@
         <option value="$PROJECT_DIR$/src/servlet/urlRewrite/RedirectRegisterServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/collection/User.java" />
+        <option value="$PROJECT_DIR$/src/bsonobject/PublicMessage.java" />
+        <option value="$PROJECT_DIR$/src/bsonobject/Message.java" />
+        <option value="$PROJECT_DIR$/src/bsonobject/PrivateMessage.java" />
+        <option value="$PROJECT_DIR$/src/bsonobject/Team.java" />
         <option value="$PROJECT_DIR$/src/bsonobject/User.java" />
       </list>
     </option>
@@ -260,6 +301,10 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/Courses/Java Server Page/mongo-java-driver-2.12.4.jar!/" />
+    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -548,12 +593,12 @@
       <changelist id="0d96d896-ca15-4b2a-8e82-133acec52ab2" name="Default" comment="" />
       <created>1417357289198</created>
       <updated>1417357289198</updated>
-      <workItem from="1417357293132" duration="6504000" />
+      <workItem from="1417357293132" duration="11496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6504000" />
+    <option name="totallyTimeSpent" value="11496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -569,7 +614,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.48655257" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295082" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -704,26 +749,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/Courses/Java Server Page/mongo-java-driver-2.12.4-sources.jar!/com/mongodb/DBCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7479675" vertical-offset="11675" max-vertical-offset="33847">
+          <caret line="774" column="21" selection-start-line="774" selection-start-column="21" selection-end-line="774" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bsonobject/PrivateMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bsonobject/PublicMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bsonobject/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="527">
+          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bsonobject/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="502" max-vertical-offset="884">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1649">
+          <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
           <folding>
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#625#626#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#449#450#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+            <element signature="e#993#994#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+            <element signature="e#1193#1194#0" expanded="true" />
+            <element signature="e#1380#1381#0" expanded="true" />
+            <element signature="e#1411#1412#0" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+            <element signature="e#1611#1612#0" expanded="true" />
+            <element signature="e#1794#1795#0" expanded="true" />
+            <element signature="e#1827#1828#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bsonobject/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2225131" vertical-offset="0" max-vertical-offset="382">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
+        <state vertical-scroll-proportion="0.42146596" vertical-offset="26" max-vertical-offset="425">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
