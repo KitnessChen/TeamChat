@@ -7,6 +7,13 @@ import java.util.Date;
 /**
  * Created by whd on 2014/11/30.
  */
+
+/*
+*
+* mainly for register
+*
+*
+* */
 public class User extends BasicBSONObject {
     private String id;
     private String nickname;
