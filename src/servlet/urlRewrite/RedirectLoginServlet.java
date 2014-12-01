@@ -9,8 +9,12 @@ import java.io.IOException;
 /**
  * Created by whd on 2014/11/30.
  */
-public class RedirectLoginServlet extends RedirectServlet {
-    public RedirectLoginServlet() {
-        super("/pages/front_end/login.jsp");
+public class RedirectLoginServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/pages/front_end/login.jsp").forward(request, response);
     }
 }
