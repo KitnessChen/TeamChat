@@ -27,6 +27,14 @@
         <servlet-name>RedirectRegisterServlet</servlet-name>
         <servlet-class>servlet.urlRewrite.RedirectRegisterServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RedirectTeamMessageServlet</servlet-name>
+        <servlet-class>servlet.urlRewrite.RedirectTeamMessageServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RedirectServlet</servlet-name>
+        <servlet-class>servlet.urlRewrite.RedirectServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RedirectRegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
