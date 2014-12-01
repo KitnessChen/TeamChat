@@ -2,6 +2,7 @@ package db;
 
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
+import com.mongodb.WriteConcern;
 
 import java.net.UnknownHostException;
 
@@ -11,6 +12,8 @@ import java.net.UnknownHostException;
 public class Database {
 
     public static DBCollection getCollection(String collectionName) throws UnknownHostException {
-        return new MongoClient("http://localhost", 27017).getDB("TeamWork").getCollection(collectionName);
+        MongoClient client = new MongoClient("localhost", 27017);
+        client.setWriteConcern(WriteConcern.NORMAL);
+        return client.getDB("TeamWork").getCollection(collectionName);
     }
 }
