@@ -1,7 +1,6 @@
 package servlet;
 
 import db.Database;
-import dbobject.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Created by whd on 2014/11/30.
@@ -25,12 +27,19 @@ public class RegisterServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("aaaaa");
         out.close();
+//
+//        User user = new User();
+//        user.setNickname("whd");
+//        user.setWorkPosition("student");
 
-        User user = new User();
-        user.setNickname("whd");
-        user.setWorkPosition("student");
-
-        Database.getCollection("Users").insert(user);
+        Connection connection = null;
+        try {
+            connection = Database.getConnection();
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("insert into Users(nickname, workPosition) values('whd', 'student')");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 }
