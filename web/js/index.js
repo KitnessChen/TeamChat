@@ -1,11 +1,11 @@
 $(document).ready(function(){
     //sign up
     $('button#signup').click(function(){
-        location.href="register.jsp";
+        location.href="/register";
     });
     
     //login
     $('button#login').click(function(){
-        location.href="login.jsp";
+        location.href="/login";
     });
 });
