@@ -21,6 +21,7 @@ public class User {
     private String location;
     private String phoneNumber;
     private String websiteURL;
+    private String email;
 
     public String getId() {
         return id;
@@ -84,5 +85,13 @@ public class User {
 
     public void setWebsiteURL(String websiteURL) {
         this.websiteURL = websiteURL;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

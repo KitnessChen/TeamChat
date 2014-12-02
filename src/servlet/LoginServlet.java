@@ -22,13 +22,15 @@ import java.sql.SQLException;
 //TODO T^T
 public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = new Gson().fromJson(request.getReader(), User.class);
+        User user = new User();
+        user.setUserName(request.getParameter("username"));
+        user.setPassword(request.getParameter("password"));
 
         Connection connection = null;
         try {
             connection = Database.getConnection();
             PreparedStatement statement = connection.prepareStatement
-                    ("select (username, password) from Users where UserName = ? ");
+                    ("select (UserName, Password) from Users where UserName = ? ");
             statement.setString(1, user.getUserName());
             ResultSet resultSet = statement.executeQuery();
 
@@ -41,6 +43,7 @@ public class LoginServlet extends HttpServlet {
                 response.getWriter().write("log in failed");
             } else {
                 session.setAttribute("UserName", user.getUserName());
+                response.getWriter().write("log in succeeded");
             }
 
         } catch (SQLException e) {
