@@ -1,7 +1,5 @@
 package dbobject;
 
-import com.mongodb.BasicDBObject;
-
 import java.util.Date;
 
 /**
@@ -14,7 +12,7 @@ import java.util.Date;
 *
 *
 * */
-public class User extends BasicDBObject {
+public class User {
     private String id;
     private String nickname;
     private String password;
@@ -30,7 +28,6 @@ public class User extends BasicDBObject {
 
     public void setId(String id) {
         this.id = id;
-        this.put("id", id);
     }
 
     public String getNickname() {
@@ -39,7 +36,6 @@ public class User extends BasicDBObject {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
-        this.put("nickname", nickname);
     }
 
     public String getPassword() {
@@ -48,7 +44,6 @@ public class User extends BasicDBObject {
 
     public void setPassword(String password) {
         this.password = password;
-        this.put("password", password);
     }
 
     public Date getBirthday() {
@@ -57,7 +52,6 @@ public class User extends BasicDBObject {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
-        this.put("birthday", birthday);
     }
 
     public String getWorkPosition() {
@@ -66,7 +60,6 @@ public class User extends BasicDBObject {
 
     public void setWorkPosition(String workPosition) {
         this.workPosition = workPosition;
-        this.put("workPosition", workPosition);
     }
 
     public String getLocation() {
@@ -75,7 +68,6 @@ public class User extends BasicDBObject {
 
     public void setLocation(String location) {
         this.location = location;
-        this.put("location", location);
     }
 
     public String getPhoneNumber() {
@@ -84,7 +76,6 @@ public class User extends BasicDBObject {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-        this.put("phoneNumber", phoneNumber);
     }
 
     public String getWebsiteURL() {
@@ -93,6 +84,5 @@ public class User extends BasicDBObject {
 
     public void setWebsiteURL(String websiteURL) {
         this.websiteURL = websiteURL;
-        this.put("websiteURL", websiteURL);
     }
 }

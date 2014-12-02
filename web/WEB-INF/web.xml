@@ -55,6 +55,16 @@
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/test-register</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>CreateTeamServlet</servlet-name>
+        <servlet-class>servlet.TeamManagement.CreateTeamServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateTeamServlet</servlet-name>
+        <url-pattern>/create-team</url-pattern>
+    </servlet-mapping>
     <!--<servlet>-->
     <!--<servlet-name>LogoutServlet</servlet-name>-->
     <!--<servlet-class>servlet.LogoutServlet</servlet-class>-->
