@@ -1,26 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: whd
-  Date: 2014/12/1
-  Time: 16:29
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%--这里大概就是判定一下，如果用户未登录（cookie)就访问index，如果已登录就访问用户主页（/home）的页面（当前）--%>
+<%
+if(session.getAttribute("user") ==null){
+response.sendRedirect("index.html");
+return;
+}
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title></title>
-    <script src="js/jquery-2.1.1.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>TeamWork</title>
 </head>
 <body>
-<h1>test create team</h1>
-<script>
-    document.body.innerHTML += "!!!";
-    var data = {
-        "teamName": "team1",
-        "creatorId": 1
-    };
-    jQuery.post("/create-team", data);
-    document.body.innerHTML += "!!!";
-</script>
+    <p>test</p>
 </body>
 </html>
