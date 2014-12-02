@@ -14,7 +14,7 @@ import java.util.Date;
 * */
 public class User {
     private String id;
-    private String nickname;
+    private String userName;
     private String password;
     private Date birthday;
     private String workPosition;
@@ -30,12 +30,12 @@ public class User {
         this.id = id;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {

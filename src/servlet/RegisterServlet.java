@@ -27,10 +27,7 @@ public class RegisterServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.println("aaaaa");
         out.close();
-//
-//        User user = new User();
-//        user.setNickname("whd");
-//        user.setWorkPosition("student");
+
 
         Connection connection = null;
         try {
