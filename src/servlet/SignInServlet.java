@@ -1,11 +1,9 @@
 package servlet;
 
-import com.google.gson.Gson;
 import db.Database;
 import dbobject.User;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,7 +18,12 @@ import java.sql.SQLException;
  */
 
 //TODO T^T
-public class LoginServlet extends HttpServlet {
+public class SignInServlet extends RedirectServlet {
+
+    public SignInServlet() {
+        super("pages/front_end/signin.jsp");
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
         user.setUserName(request.getParameter("username"));
@@ -51,7 +54,4 @@ public class LoginServlet extends HttpServlet {
         }
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendError(404);
-    }
 }

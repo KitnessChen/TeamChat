@@ -14,33 +14,8 @@
     <!--</filter>-->
 
     <!--URL redirect-->
-    <servlet>
-        <servlet-name>RedirectLoginServlet</servlet-name>
-        <servlet-class>servlet.urlRewrite.RedirectLoginServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RedirectLoginServlet</servlet-name>
-        <url-pattern>/login</url-pattern>
-    </servlet-mapping>
 
-    <servlet>
-        <servlet-name>RedirectRegisterServlet</servlet-name>
-        <servlet-class>servlet.urlRewrite.RedirectRegisterServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RedirectRegisterServlet</servlet-name>
-        <url-pattern>/register</url-pattern>
-    </servlet-mapping>
 
-    <servlet>
-        <servlet-name>RedirectTeamMessageServlet</servlet-name>
-        <servlet-class>servlet.urlRewrite.RedirectTeamMessageServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>RedirectTeamMessageServlet</servlet-name>
-        <url-pattern>/team/*</url-pattern>
-    </servlet-mapping>
-    
     <error-page>
         <error-code>404</error-code>
         <location>/pages/front_end/404.jsp</location>
@@ -49,17 +24,22 @@
 
     <!--TODO add mappings-->
     <!--other servlet-->
-    <!--<servlet>-->
-    <!--<servlet-name>LoginServlet</servlet-name>-->
-    <!--<servlet-class>servlet.LoginServlet</servlet-class>-->
-    <!--</servlet>-->
     <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>servlet.RegisterServlet</servlet-class>
+        <servlet-name>SignInServlet</servlet-name>
+        <servlet-class>servlet.SignInServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/test-register</url-pattern>
+        <servlet-name>SignInServlet</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SignUpServlet</servlet-name>
+        <servlet-class>servlet.SignUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignUpServlet</servlet-name>
+        <url-pattern>/signup</url-pattern>
     </servlet-mapping>
 
 

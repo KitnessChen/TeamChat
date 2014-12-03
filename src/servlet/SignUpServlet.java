@@ -16,7 +16,12 @@ import java.sql.SQLException;
 /**
  * Created by whd on 2014/11/30.
  */
-public class RegisterServlet extends HttpServlet {
+public class SignUpServlet extends RedirectServlet {
+
+    public SignUpServlet() {
+        super("pages/front_end/signup.jsp");
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //TODO get parameters
         User user = new User();
@@ -46,7 +51,4 @@ public class RegisterServlet extends HttpServlet {
         }
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendError(404);
-    }
 }
