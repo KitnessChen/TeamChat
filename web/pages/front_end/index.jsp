@@ -14,7 +14,7 @@ return;
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TeamWork</title>
+    <title>Home - TeamWork</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
