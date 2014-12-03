@@ -4,7 +4,6 @@ import db.Database;
 import dbobject.User;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -32,7 +31,7 @@ public class SignUpServlet extends RedirectServlet {
         response.setContentType("text/html;charset=utf-8");
         try {
             Connection connection = Database.getConnection();
-            PreparedStatement statement = connection.prepareStatement("select * from Users where username == ? ");
+            PreparedStatement statement = connection.prepareStatement("select * from Users where username = ? ");
             statement.setString(1, request.getParameter("username"));
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {

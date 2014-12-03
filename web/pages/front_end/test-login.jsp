@@ -8,23 +8,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%=session.getAttribute("UserName")%>
     <title></title>
     <script src="/js/jquery-2.1.1.min.js"></script>
     <script>
         var data = {
             "username": "王瀚达",
-            "password": "123456",
-            "email": "12321"
+            "password": "123456"
         };
 
-        $.post("/signup", data, function () {
-            alert(data.innerText);
-        }, "html");
+        $.post("/signin", data);
 
     </script>
 </head>
 <body>
+<%=session.getAttribute("UserName")%>
 <h1>test signup</h1>
 </body>
 </html>
