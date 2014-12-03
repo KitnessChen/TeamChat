@@ -8,18 +8,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <%=session.getAttribute("UserName")%>
     <title></title>
-    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="/js/jquery-2.1.1.min.js"></script>
     <script>
         var data = {
-            "teamName": "team1",
-            "creatorId": 1
+            "username": "王瀚达",
+            "password": "123456",
+            "email": "12321"
         };
-        $.post("/create-team", data);
+
+        $.post("/signup", data, function () {
+            alert(data.innerText);
+        }, "html");
 
     </script>
 </head>
 <body>
-    <h1>test create team</h1>
+<h1>test signup</h1>
 </body>
 </html>

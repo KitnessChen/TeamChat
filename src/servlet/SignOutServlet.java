@@ -12,11 +12,11 @@ import java.io.IOException;
  */
 
 //TODO T^T
-public class LogoutServlet extends HttpServlet {
+public class SignOutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         if (null != session) {
-            session.removeAttribute("username");
+            session.removeAttribute("UserName");
         }
     }
 
