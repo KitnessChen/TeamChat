@@ -4,7 +4,7 @@ $(document).ready(function(){
         var username = $("#username").val();
         var password = $("#password").val();
         $.ajax({
-            url: '../front_end/login.jsp',
+            url: '/signin',
             type: 'post',
             dataType: 'json',
             data:{'action': 'signin', 'username': username, 'password': password},

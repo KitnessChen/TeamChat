@@ -5,7 +5,7 @@ $(document).ready(function(){
         var username = $("#username").val();
         var password = $("#password").val();
         $.ajax({
-            url: 'signup_success.jsp',
+            url: '/signup',
             type: 'post',
             dataType: 'json',
             data:{'action': 'signin', 'email': email, 'username': username, 'password': password},
