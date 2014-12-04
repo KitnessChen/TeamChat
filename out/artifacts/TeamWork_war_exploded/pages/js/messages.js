@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('button').click(function () {
         var content = $("#content").val();
         var data = {
-            'query': 'public message',
+            'type': 'public message',
             'teamid': 1,
             'touserid': -1,
             'content': content
