@@ -33,7 +33,7 @@ public class SignInServlet extends RedirectServlet {
         try {
             connection = Database.getConnection();
             PreparedStatement statement = connection.prepareStatement
-                    ("select UserName, Password from Users where UserName = ? ");
+                    ("select UserName, Password, ID from Users where UserName = ? ");
             statement.setString(1, user.getUserName());
             ResultSet resultSet = statement.executeQuery();
 
@@ -45,7 +45,10 @@ public class SignInServlet extends RedirectServlet {
                     !resultSet.getString("Password").equals(user.getPassword())) {
                 response.getWriter().write("log in failed");
             } else {
+                user.setId(resultSet.getString("ID"));
                 session.setAttribute("username", user.getUserName());
+                session.setAttribute("userid", user.getId());
+                System.out.println("to string " + user.getId().toString());
                 response.getWriter().write("log in succeeded");
             }
 

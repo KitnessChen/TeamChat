@@ -2,11 +2,11 @@ $(document).ready(function () {
 
     //sign in
     $('button').click(function () {
-//        var username = $("#username").val();
-//        var password = $("#password").val();
+        var username = $("#username").val();
+        var password = $("#password").val();
         var data = {
-            'username': 'whd',
-            'password': '123'
+            'username': username,
+            'password': password
         };
         $.post('/signin', data, function (msg) {
             alert(msg);
