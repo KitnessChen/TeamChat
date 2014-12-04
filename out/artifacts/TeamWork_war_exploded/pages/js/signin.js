@@ -1,18 +1,30 @@
-$(document).ready(function(){
+$(document).ready(function () {
+
     //sign in
-    $('button').click(function(){
-        var username = $("#username").val();
-        var password = $("#password").val();
-        $.ajax({
-            url: '/signin',
-            type: 'post',
-            dataType: 'json',
-            data:{'action': 'signin', 'username': username, 'password': password},
-            success: function(msg){
-                alert(msg);
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown){
-                alert(errorThrown);}
-            });
+    $('button').click(function () {
+//        var username = $("#username").val();
+//        var password = $("#password").val();
+        var data = {
+            'username': 'whd',
+            'password': '123'
+        };
+        $.post('/signin', data, function (msg) {
+            alert(msg);
+        });
+//        $.ajax({
+//            url: '/signin',
+//            type: 'post',
+//            dataType: 'json',
+//            data: {
+//                'username': username,
+//                'password': password
+//            },
+//            success: function (msg) {
+////                alert(msg);
+//            },
+//            error: function (XMLHttpRequest, textStatus, errorThrown) {
+//                alert(errorThrown);
+//            }
+//        });
     });
 });

@@ -35,11 +35,11 @@
                     <input type="text" placeholder="Username" id="username" required autofocus>
                 </div>
                 <div class="inputbox">
-                    <input type="text" placeholder="Password" id="Password" required>
+                    <input type="password" placeholder="Password" id="password" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-large">Sign in</button>
+                <button type="button" class="btn btn-primary btn-large">Sign in</button>
                 <div class="action-wrapper clearfix">
-                    <a href="/forgot" class="forget">Forgot Password？</a>
+                    <a href="/forgot" class="forget">Forgot Password?</a>
                     <a href="/signup" class="signup pull-right">Sign up</a>
                 </div>
             </form>
