@@ -13,7 +13,7 @@ $(document).ready(function () {
         // 如果type是submit的话就会发两次（submit自带提交form效果）
         //只是为了测试一下是否返回结果成功
         $.post('/signup', data, function (msg) {
-            document.body.innerHTML = msg;
+            alert(msg);
         });
 //        $.ajax({
 //            url: '/signup',
