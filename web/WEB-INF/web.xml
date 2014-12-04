@@ -26,7 +26,7 @@
     <!--other servlet-->
     <servlet>
         <servlet-name>SignInServlet</servlet-name>
-        <servlet-class>servlet.SignInServlet</servlet-class>
+        <servlet-class>servlet.redirect.SignInServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
@@ -35,7 +35,7 @@
 
     <servlet>
         <servlet-name>SignUpServlet</servlet-name>
-        <servlet-class>servlet.SignUpServlet</servlet-class>
+        <servlet-class>servlet.redirect.SignUpServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
@@ -44,18 +44,18 @@
 
 
     <servlet>
-        <servlet-name>CreateTeamServlet</servlet-name>
-        <servlet-class>servlet.CreateTeamServlet</servlet-class>
+        <servlet-name>TeamServlet</servlet-name>
+        <servlet-class>servlet.redirect.TeamServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>CreateTeamServlet</servlet-name>
-        <url-pattern>/create-team</url-pattern>
+        <servlet-name>TeamServlet</servlet-name>
+        <url-pattern>/team</url-pattern>
     </servlet-mapping>
 
 
     <servlet>
         <servlet-name>MessageServlet</servlet-name>
-        <servlet-class>servlet.MessageServlet</servlet-class>
+        <servlet-class>servlet.redirect.MessageServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MessageServlet</servlet-name>
@@ -70,4 +70,10 @@
         <servlet-name>SignOutServlet</servlet-name>
         <url-pattern>/signout</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>GetTeamServlet</servlet-name>
+        <servlet-class>servlet.GetTeamServlet</servlet-class>
+    </servlet>
 </web-app>
