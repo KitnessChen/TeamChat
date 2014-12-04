@@ -14,18 +14,19 @@ return;
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>TeamWork</title>
+    <title>Home - TeamWork</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../css/home.css" rel="stylesheet">
-    <script src="../../js/jquery.js" type="text/javascript"></script>
-    <script src="../../js/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="../../js/bootstrap-dropdown.js" type="text/javascript"></script>
-    <script src="../js/home.js" type="text/javascript"></script>
+    <link href="css/home.css" rel="stylesheet">
+    <!-- Custom scripts for this template -->    
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap-dropdown.js" type="text/javascript"></script>
+    <script src="pages/js/home.js" type="text/javascript"></script>
 </head>
 
 <body>
