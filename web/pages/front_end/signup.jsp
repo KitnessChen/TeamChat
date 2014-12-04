@@ -38,9 +38,9 @@
                     <input type="text" placeholder="Username" id="username" required autofocus>
                 </div>
                 <div class="inputbox">
-                    <input type="text" placeholder="Password" id="Password" required>
+                    <input type="password" placeholder="Password" id="password" required>
                 </div>
-                <button type="submit" class="btn btn-primary btn-large">Sign up</button>
+                <button type="button" class="btn btn-primary btn-large">Sign up</button>
             </form>
         </div>
     </div>

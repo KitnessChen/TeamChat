@@ -17,16 +17,16 @@ return;
     <title>TeamName - TeamWork</title> <!-- 这里要的teamname是传过来的呀-->
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
 
     <!-- Custom scripts for this template -->
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap-dropdown.js" type="text/javascript"></script>
+    <script src="/js/jquery.js" type="text/javascript"></script>
+    <script src="/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/js/bootstrap-dropdown.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="container">

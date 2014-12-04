@@ -31,7 +31,7 @@ public class SignUpServlet extends RedirectServlet {
         response.setContentType("text/html;charset=utf-8");
         try {
             Connection connection = Database.getConnection();
-            PreparedStatement statement = connection.prepareStatement("select * from Users where username = ? ");
+            PreparedStatement statement = connection.prepareStatement("select * from Users where UserName = ? ");
             statement.setString(1, request.getParameter("username"));
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
