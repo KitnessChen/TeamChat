@@ -2,6 +2,8 @@ package servlet.redirect;
 
 import db.Database;
 import db.Validation;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -45,6 +48,32 @@ public class TeamServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=utf-8");
+        if (request.getParameter("type").equals("get team members")) {
+            try {
+                Connection connection = Database.getConnection();
+                PreparedStatement statement = connection.prepareStatement
+                        ("select Team_User.UserId, Users.UserName from Users, Team_User where " +
+                                "Users.ID = Team_User.UserId and Team_User.TeamId = ?");
+                statement.setInt(1, Integer.parseInt(request.getParameter("teamid")));
+                ResultSet resultSet = statement.executeQuery();
+                JSONObject result = new JSONObject();
+                JSONArray array = new JSONArray();
+                while (resultSet.next()) {
+                    JSONObject json = new JSONObject();
+//                    System.out.println(resultSet.getInt(1));
+//                    System.out.println(resultSet.getString(2));
+                    json.put("userid", resultSet.getInt(1));
+                    json.put("username", resultSet.getString(2));
+                    array.put(json);
+                }
+                result.put("memberList", array);
+                response.getWriter().write(result.toString());
+                System.out.println(result.toString());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
 
+        }
     }
 }
