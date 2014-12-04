@@ -1,4 +1,4 @@
-package servlet.TeamManagement;
+package servlet;
 
 import dbobject.Team;
 

@@ -1,0 +1,15 @@
+/**
+ * Created by whd on 2014/12/4.
+ */
+$(document).ready(function () {
+    $('button').click(function () {
+        var content = $("#content").val();
+        var data = {
+            'query': 'public message',
+            'teamid': 1,
+            'touserid': -1,
+            'content': content
+        };
+        $.post("/message", data);
+    });
+});
