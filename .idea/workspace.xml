@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a395e551-734a-4abc-af7d-1c76cc103482" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pages/front_end/messages.jsp" afterPath="$PROJECT_DIR$/web/pages/front_end/messages.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pages/js/signin.js" afterPath="$PROJECT_DIR$/web/pages/js/signin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pages/front_end/signin.jsp" afterPath="$PROJECT_DIR$/web/pages/front_end/signin.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pages/js/signup.js" afterPath="$PROJECT_DIR$/web/pages/js/signup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/servlet/SignInServlet.java" afterPath="$PROJECT_DIR$/src/servlet/SignInServlet.java" />
     </list>
     <ignored path="TeamWork.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,18 +25,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SignInServlet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/servlet/SignInServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="280" max-vertical-offset="850">
-              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-              <folding>
-                <marker date="1417657582182" expanded="true" signature="1040:1095" placeholder="select UserN..Users..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -51,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messages.jsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="messages.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pages/front_end/messages.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13043478" vertical-offset="0" max-vertical-offset="1734">
-              <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+            <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="1734">
+              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -81,10 +65,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SignInServlet.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/servlet/SignInServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6311881" vertical-offset="0" max-vertical-offset="850">
+              <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+              <folding>
+                <marker date="1417658827195" expanded="true" signature="1040:1095" placeholder="select UserN..Users..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="signin.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/pages/front_end/signin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769" vertical-offset="612" max-vertical-offset="1122">
+            <state vertical-scroll-proportion="-20.923077" vertical-offset="204" max-vertical-offset="1122">
               <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
               <folding />
             </state>
@@ -154,11 +150,11 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/servlet/SignUpServlet.java" />
         <option value="$PROJECT_DIR$/web/pages/front_end/signup.jsp" />
-        <option value="$PROJECT_DIR$/src/servlet/SignInServlet.java" />
         <option value="$PROJECT_DIR$/web/pages/front_end/signin.jsp" />
         <option value="$PROJECT_DIR$/web/pages/js/signin.js" />
         <option value="$PROJECT_DIR$/web/pages/js/signup.js" />
         <option value="$PROJECT_DIR$/web/pages/front_end/messages.jsp" />
+        <option value="$PROJECT_DIR$/src/servlet/SignInServlet.java" />
       </list>
     </option>
   </component>
@@ -1057,7 +1053,7 @@
       <workItem from="1417619722098" duration="1668000" />
       <workItem from="1417621465673" duration="496000" />
       <workItem from="1417621984675" duration="3578000" />
-      <workItem from="1417654407116" duration="4351000" />
+      <workItem from="1417654407116" duration="5021000" />
     </task>
     <task id="LOCAL-00001" summary="test idea commit">
       <created>1417434079972</created>
@@ -1067,7 +1063,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43018000" />
+    <option name="totallyTimeSpent" value="43688000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1499,16 +1495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/servlet/SignInServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="280" max-vertical-offset="850">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-          <folding>
-            <marker date="1417657582182" expanded="true" signature="1040:1095" placeholder="select UserN..Users..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/front_end/signin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614" vertical-offset="204" max-vertical-offset="1122">
@@ -1533,14 +1519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/pages/front_end/signin.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="612" max-vertical-offset="1122">
-          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/js/signup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
@@ -1559,9 +1537,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/pages/front_end/messages.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13043478" vertical-offset="0" max-vertical-offset="1734">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="1734">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/pages/front_end/signin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.923077" vertical-offset="204" max-vertical-offset="1122">
+          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/servlet/SignInServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6311881" vertical-offset="0" max-vertical-offset="850">
+          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
+          <folding>
+            <marker date="1417658827195" expanded="true" signature="1040:1095" placeholder="select UserN..Users..." />
+          </folding>
         </state>
       </provider>
     </entry>

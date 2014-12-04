@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--这里大概就是判定一下，如果用户未登录（cookie)就访问index，如果已登录就访问用户主页（/home）的页面（当前）--%>
 <%
-if(session.getAttribute("user") ==null){
+if(session.getAttribute("username") ==null){
 response.sendRedirect("index.html");
 return;
 }

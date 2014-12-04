@@ -45,7 +45,7 @@ public class SignInServlet extends RedirectServlet {
                     !resultSet.getString("Password").equals(user.getPassword())) {
                 response.getWriter().write("log in failed");
             } else {
-                session.setAttribute("UserName", user.getUserName());
+                session.setAttribute("username", user.getUserName());
                 response.getWriter().write("log in succeeded");
             }
 
