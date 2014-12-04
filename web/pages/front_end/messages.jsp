@@ -34,21 +34,21 @@ return;
         <div class="col-md-2">
           <div class="span2">
               <ul class="nav nav-pills nav-stacked">
-                  <li class="nav-header"><a href="/team/teamname">teamname</a></li>
+                  <li class="nav-header" data-tid="<% team_id %>"><a href="/team/teamname">teamname</a></li>
                   <li class="divider"></li>
                   <li class="nav-header">Channel</li>
                   <!-- 一个channel对应一个li -->
-                  <li class="active"><a href="/message/teamname#channel">channel name</a></li>
-                  <li><a href="/message/teamname#channel">channel name</a></li>
-                  <li><a href="/message/teamname#channel">channel name</a></li>
+                  <li class="active" data-cid="<% channel_id %>"><a href="/message/teamname#channel">channel name</a></li>
+                  <li data-cid="<% channel_id %>"><a href="/message/teamname#channel">channel name</a></li>
+                  <li data-cid="<% channel_id %>"><a href="/message/teamname#channel">channel name</a></li>
                   <li class="divider"></li>
                   <li class="nav-header">Direct Message</li>
                   <!-- 一个member对应一个li -->
-                  <li><a href="/message/teamname@member">member name</a></li>
-                  <li><a href="/message/teamname@member">member name</a></li>
-                  <li><a href="/message/teamname@member">member name</a></li>
+                  <li data-mid="<% member_id %>"><a href="/message/teamname@member">member name</a></li>
+                  <li data-mid="<% member_id %>"><a href="/message/teamname@member">member name</a></li>
+                  <li data-mid="<% member_id %>"><a href="/message/teamname@member">member name</a></li>
                   <li class="divider"></li>
-                  <li class="nav-header"><a href="/account/profile">username</a></li>
+                  <li class="nav-header" data-uid="<% user_id %>"><a href="/account/profile">username</a></li>
               </ul>
           </div>
       </div>
