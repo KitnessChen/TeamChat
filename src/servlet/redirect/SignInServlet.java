@@ -48,7 +48,6 @@ public class SignInServlet extends RedirectServlet {
                 user.setId(resultSet.getString("ID"));
                 session.setAttribute("username", user.getUserName());
                 session.setAttribute("userid", user.getId());
-                System.out.println("to string " + user.getId().toString());
                 response.getWriter().write("log in succeeded");
             }
 

@@ -24,6 +24,21 @@
                     alert(data);
                 });
             });
+
+            $("#get").click(function () {
+                var parameters = {
+                    'type': 'get team members',
+                    'teamid': 1
+                };
+                $.get("/team", parameters, function (data) {
+                    var i;
+                    alert(data);
+                    for (i in data.memberList) {
+                        $('#container').innerHTML +=
+                                i.username + ", " + i.userid + "\n";
+                    }
+                });
+            });
         });
     </script>
 </head>
@@ -37,5 +52,10 @@
     <input type="text" id="userid" value="userid"/>
 </div>
 <button id="submit">添加</button>
+
+<button id="get">获得所有成员</button>
+<div id="container">
+
+</div>
 </body>
 </html>
