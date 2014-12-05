@@ -4,6 +4,7 @@ import db.Database;
 
 import java.net.UnknownHostException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -12,7 +13,7 @@ import java.sql.SQLException;
  */
 //TODO complete
 public class Message {
-    private String publishTime;
+    private Date publishTime;
     private String content;
     private int teamId;
     private int fromUserId;
@@ -26,11 +27,11 @@ public class Message {
         this.toUserId = toUserId;
     }
 
-    public String getPublishTime() {
+    public Date getPublishTime() {
         return publishTime;
     }
 
-    public void setPublishTime(String publishTime) {
+    public void setPublishTime(Date publishTime) {
         this.publishTime = publishTime;
     }
 
@@ -65,7 +66,7 @@ public class Message {
         PreparedStatement statement = connection.prepareStatement(sqlString);
         statement.setInt(1, fromUserId);
         statement.setInt(2, toUserId);
-        statement.setString(3, publishTime);
+        statement.setDate(3, publishTime);
         statement.setString(4, content);
         statement.executeUpdate();
     }

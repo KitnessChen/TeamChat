@@ -31,7 +31,6 @@
                     'teamid': 1
                 };
                 $.get("/team", parameters, function (data) {
-                    alert(data);
                     for (var i in data.memberList) {
                         $('#container')[0].innerHTML += data.memberList[i].username + ",";
                     }

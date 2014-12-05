@@ -7,9 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by whd on 2014/12/4.
@@ -34,7 +33,7 @@ public class MessageServlet extends RedirectServlet {
             PublicMessage message = new PublicMessage();
             message.setContent(request.getParameter("content").toString());
             message.setFromUserId(Integer.parseInt(userId));
-            message.setPublishTime(new SimpleDateFormat("MM月 dd日 HH:mm:ss").format(new Date()));
+            message.setPublishTime(new Date(System.currentTimeMillis()));
             message.setTeamId(Integer.parseInt(request.getParameter("teamid").toString()));
             try {
                 message.insert();
@@ -45,7 +44,7 @@ public class MessageServlet extends RedirectServlet {
             PrivateMessage message = new PrivateMessage();
             message.setContent(request.getParameter("content").toString());
             message.setFromUserId(Integer.parseInt(userId));
-            message.setPublishTime(new SimpleDateFormat("MM月 dd日 HH:mm:ss").format(new Date()));
+            message.setPublishTime(new Date(System.currentTimeMillis()));
             message.setTeamId(Integer.parseInt(request.getParameter("teamid").toString()));
             message.setToUserId(Integer.parseInt(request.getParameter("touserid").toString()));
             try {
@@ -55,5 +54,4 @@ public class MessageServlet extends RedirectServlet {
             }
         }
     }
-
 }

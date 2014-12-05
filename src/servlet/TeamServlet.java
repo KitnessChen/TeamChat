@@ -43,15 +43,26 @@ public class TeamServlet extends HttpServlet {
                 String teamName = request.getParameter("teamname");
 
                 Connection connection = Database.getConnection();
+                // insert into teams table
                 PreparedStatement statement = connection.prepareStatement
                         ("insert into Teams (TeamName, CreatorId) values(?, ?)");
                 statement.setString(1, teamName);
                 statement.setString(2, userId);
                 statement.executeUpdate();
-                response.getWriter().write("team member created successfully");
+                statement = connection.prepareStatement
+                        ("select ID from Teams where CreatorId = ? and TeamName = ?");
+                //get teamid of the recently created team
+                statement.setInt(1, Integer.parseInt(userId));
+                statement.setString(2, teamName);
+                ResultSet resultSet = statement.executeQuery();
+                resultSet.next();
+                String teamId = Integer.toString(resultSet.getInt("ID"));
+                String sqlString = "create table TeamMessage" + teamId + "(FromUserId int, ToUserId int, PublishTime date, Content text(255))";
+                connection.createStatement().executeUpdate(sqlString);
+                response.getWriter().write("team created successfully");
             }
         } catch (SQLException e) {
-
+            e.printStackTrace();
         }
     }
 
