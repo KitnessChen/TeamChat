@@ -1,4 +1,4 @@
-package servlet.redirect;
+package servlet;
 
 import db.Database;
 import db.Validation;
@@ -16,16 +16,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Created by whd on 2014/12/2.
+ * Created by whd on 2014/12/4.
  */
 public class TeamServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=utf-8");
+        try {
+            response.setContentType("text/html;charset=utf-8");
 
-        System.out.println("1");
-        if (request.getParameter("type").equals("add team member")) {
-            try {
-                System.out.println("2");
+            if (request.getParameter("type").equals("add team member")) {
                 //TODO check if the person has the right to let another person in
                 String userId = request.getParameter("userid");
                 String teamId = request.getParameter("teamid");
@@ -40,17 +38,27 @@ public class TeamServlet extends HttpServlet {
                     statement.executeUpdate();
                     response.getWriter().write("team member added successfully");
                 }
-            } catch (SQLException e) {
+            } else if (request.getParameter("type").equals("create team")) {
+                String userId = request.getSession().getAttribute("userid").toString();
+                String teamName = request.getParameter("teamname");
 
+                Connection connection = Database.getConnection();
+                PreparedStatement statement = connection.prepareStatement
+                        ("insert into Teams (TeamName, CreatorId) values(?, ?)");
+                statement.setString(1, teamName);
+                statement.setString(2, userId);
+                statement.executeUpdate();
+                response.getWriter().write("team member created successfully");
             }
+        } catch (SQLException e) {
 
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=utf-8");
-        if (request.getParameter("type").equals("get team members")) {
-            try {
+        try {
+            response.setContentType("text/html;charset=utf-8");
+            if (request.getParameter("type").equals("get team members")) {
                 Connection connection = Database.getConnection();
                 PreparedStatement statement = connection.prepareStatement
                         ("select Team_User.UserId, Users.UserName from Users, Team_User where " +
@@ -61,18 +69,32 @@ public class TeamServlet extends HttpServlet {
                 JSONArray array = new JSONArray();
                 while (resultSet.next()) {
                     JSONObject json = new JSONObject();
-//                    System.out.println(resultSet.getInt(1));
-//                    System.out.println(resultSet.getString(2));
                     json.put("userid", resultSet.getInt(1));
                     json.put("username", resultSet.getString(2));
                     array.put(json);
                 }
                 result.put("memberList", array);
                 response.getWriter().write(result.toString());
-                System.out.println(result.toString());
-            } catch (SQLException e) {
-                e.printStackTrace();
+            } else if (request.getParameter("type").equals("get one\'s teams")) {
+                Connection connection = null;
+                connection = Database.getConnection();
+                PreparedStatement statement = connection.prepareStatement
+                        ("select Team_User.TeamId, Teams.TeamName from Teams, Team_User where " +
+                                "Teams.ID = Team_User.TeamId and Team_User.UserId = ?");
+                statement.setInt(1, Integer.parseInt(request.getParameter("userid")));
+                ResultSet resultSet = statement.executeQuery();
+                JSONObject result = new JSONObject();
+                JSONArray array = new JSONArray();
+                while (resultSet.next()) {
+                    JSONObject json = new JSONObject();
+                    json.put("teamid", resultSet.getInt(1));
+                    json.put("teamname", resultSet.getString(2));
+                    array.put(json);
+                }
+                result.put("teamList", array);
+                response.getWriter().write(result.toString());
             }
+        } catch (Exception e) {
 
         }
     }

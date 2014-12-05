@@ -1,4 +1,4 @@
-package servlet.redirect;
+package servlet;
 
 import dbobject.PrivateMessage;
 import dbobject.PublicMessage;
