@@ -31,12 +31,19 @@
                     'teamid': 1
                 };
                 $.get("/team", parameters, function (data) {
-                    var i;
                     alert(data);
-                    for (i in data.memberList) {
-                        $('#container').innerHTML +=
-                                i.username + ", " + i.userid + "\n";
+                    for (var i in data.memberList) {
+                        $('#container')[0].innerHTML += data.memberList[i].username + ",";
                     }
+                }, "json");
+            });
+
+            $('#create_team').click(function () {
+                $.post('/team', {
+                    'type': 'create team',
+                    'teamname': $('#teamname').val()
+                }, function (msg) {
+                    alert(msg);
                 });
             });
         });
@@ -54,8 +61,13 @@
 <button id="submit">添加</button>
 
 <button id="get">获得所有成员</button>
-<div id="container">
-
+<div>
+    <input type="text" id="teamname" value="团队名称"/>
+    <button id="create_team">创建团队</button>
 </div>
+<div id="container">
+    123
+</div>
+
 </body>
 </html>

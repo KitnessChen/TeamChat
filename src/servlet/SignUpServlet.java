@@ -1,4 +1,4 @@
-package servlet.redirect;
+package servlet;
 
 import db.Database;
 import dbobject.User;
