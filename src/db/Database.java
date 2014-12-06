@@ -16,8 +16,16 @@ public class Database {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        String classUri = Database.class.getResource("").getPath().substring(1);
-        String url = "jdbc:odbc:driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=" + classUri + "../../../Database/AccessDB.mdb";
+//        String classUri = Database.class.getResource("").getPath().substring(1);
+        String uri = Database.class.getResource("../../../Database/AccessDB.mdb").getFile().substring(1);
+        //java 路径名含空格会变成%20
+        uri = uri.replaceAll("%20", " ");
+        System.out.println(uri);
+//            System.out.println(uri);
+//        String url = "jdbc:odbc:driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=" + classUri + "../../../Database/AccessDB.mdb";
+
+//        System.out.println(url);
+        String url = "jdbc:odbc:driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=" + uri;
         return DriverManager.getConnection(url, "", "");
     }
 }
