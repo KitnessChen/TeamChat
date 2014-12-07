@@ -1,6 +1,6 @@
 
 
-body{ background:#a5d2da; padding:0; color: #454545; font-family: "Myriad Pro";}
+body{ background:#a5d2da;color: #454545; font-family: "Myriad Pro";}
 a,a:hover{text-decoration:none; color:#FE5214}
 h2,h3{color:#FE5214; text-rendering: optimizelegibility; }
 h1{padding:0px; font-weight: 200;font-size: 32px;color: #3f3f3f;margin: 0;font-family: "Myriad Pro";text-rendering: optimizelegibility;}
@@ -20,7 +20,7 @@ h1.brand {
 }
 
 .span3.logo {
-    padding: 34px 0 0;
+    padding: 26px 0 0;
 }
 
 .clr{clear:both}
