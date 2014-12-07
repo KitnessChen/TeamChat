@@ -2,7 +2,7 @@
  * Created by whd on 2014/12/4.
  */
 $(document).ready(function () {
-    $('button').click(function () {
+    $('button#sendmessage').click(function () {
         var content = $("#content").val();
         var data = {
             'type': 'public message',
