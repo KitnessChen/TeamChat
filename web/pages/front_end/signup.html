@@ -21,7 +21,7 @@
     <script src="/js/jquery.easing-1.3.min.js" type="text/javascript"></script>
     <script src="/js/default.js" type="text/javascript"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/pages/js/signin.js"></script>
+    <script src="/pages/js/signup.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
@@ -40,8 +40,8 @@
   </div>
   </div>
     <div class="container main-container">
-      <form class="form-signin" role="form">
-        <h4 class="form-signin-heading">Please Sign Up</h4>
+      <form class="form-signup" role="form">
+        <h4 class="form-signup-heading">Please Sign Up</h4>
         <input type="text" placeholder="Email" id="email" required autofocus>
         <input class="form-control" type="text" placeholder="Username" id="username" required autofocus>
         <input class="form-control" type="text" placeholder="Password" id="Password" required>
