@@ -1,7 +1,7 @@
-TeamWork
+TeamChat
 ====
 
-`TeamWork` is a platform for team communication: everything in one place, instantly searchable, available wherever you go.
+`TeamChat` is a platform for team communication: everything in one place, instantly searchable, available wherever you go.
 
 ##Function:
 - *Communicate any time*: 
