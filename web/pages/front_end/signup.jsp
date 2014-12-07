@@ -28,6 +28,7 @@
 </head>
 
 <body>
+<!-- Header Section -->
   <div id="headerSection">
   <div class="container">
   <div class="span3 logo"><img src="/img/logo.png" alt="" /></div>
@@ -39,6 +40,8 @@
       </div>
   </div>
   </div>
+
+<!-- Signup Section -->
     <div class="container main-container">
       <form class="form-signup" role="form">
         <h4 class="form-signup-heading">Please Sign Up</h4>
@@ -48,5 +51,10 @@
         <button class="btn btn-lg btn-block btn-primary" type="submit">Sign up</button>
       </form>
     </div>
+
+<!-- Copyright Section -->
+<div id="footerSection">
+    <div class="span8 copyright"><p>  Copyright © 2014 | Developed By RUCers</p></div> 
+</div> 
 </body>
 </html>
