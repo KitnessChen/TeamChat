@@ -48,18 +48,22 @@ border-bottom: 0;
 }
 
 .desk-container {
-  max-width: 700px;
-  padding: 15px;
+  max-width: 660px;
+  padding: 10px;
   margin: 0 auto;
 }
 .desk-container .list-group-item{
   margin: 20px;
 }
+.desk-container .row{padding-left: 210px;}
+.desk-container #mybutton1{background:#fff; color:#a5d2da; font-size: 20px;}
+.desk-container #mybutton2{background:#fff; color:#a5d2da; font-size: 20px;}
+.desk-container .list-group-item{border-radius:10px;}
 .desk-container .span6{ float:none; margin:0 auto; text-align:center;}
 .desk-container h2{ text-transform:uppercase; color:#fff; padding:0;font-size:50px;}
 .desk-container h4{ padding:0;font-size:26px;}
 
-#footerSection{  text-align:center; padding:70px 0 0;}
+#footerSection{text-align:center; padding:70px 0 0;}
 #footerSection .span8{ float:none; margin:0 auto;}
 #footerSection h1{ text-transform:uppercase; color:#fff; padding:0;font-size:60px;}
 #footerSection p {
@@ -67,4 +71,18 @@ border-bottom: 0;
     font-size: 19px;
     line-height: 27px;
   margin: 15px 0;
+}
+
+.modal .modal-dialog .modal-content .modal-body .auth-form .inputbox{padding-bottom:10px;}
+.modal .modal-dialog .modal-content .modal-body #create-team-form{
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.modal .modal-dialog .modal-content .modal-body #search-team-form{
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
