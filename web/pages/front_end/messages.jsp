@@ -79,7 +79,7 @@ return;
           </ul>
         </div>
       </div>
-      <div class="col-md-7">
+      <div class="col-md-8">
         <div class="message-send-box">
           <div class="input-group">
            <input type="text" class="form-control" required autofocus>
