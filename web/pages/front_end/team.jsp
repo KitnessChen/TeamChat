@@ -14,14 +14,14 @@ return;
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Messages - TeamWork</title>
+    <title>TeamName - TeamWork</title> <!-- 这里要的teamname是传过来的呀-->
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap-3.1.1.min.css" rel="stylesheet">
     <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/css/message.css" rel="stylesheet"> 
+    <link href="/css/team.css" rel="stylesheet"> 
 
     <!-- Custom scripts for this template -->
     <script src="/js/jquery.js" type="text/javascript"></script>
@@ -60,52 +60,12 @@ return;
   <div class="desk-container">
     <div class="row">
       <div class="col-md-3">
-        <div class="span2">
-          <ul class="nav nav-pills nav-stacked">
-            <li class="nav-header" data-tid="<% team_id %>"><a href="/team/teamname">teamname</a></li>
-            <li class="divider"></li>
-            <li class="nav-header">Channel</li>
-            <!-- 一个channel对应一个li -->
-            <li class="active" data-cid="<% channel_id %>"><a href="/message/teamname#channel">channel name</a></li>
-            <li data-cid="<% channel_id %>"><a href="/message/teamname#channel">channel name</a></li>
-            <li data-cid="<% channel_id %>"><a href="/message/teamname#channel">channel name</a></li>
-            <li class="divider"></li>
-            <li class="nav-header">Direct Message</li>
-            <!-- 一个member对应一个li -->
-            <li data-mid="<% member_id %>"><a href="/message/teamname@member">member name</a></li>
-            <li data-mid="<% member_id %>"><a href="/message/teamname@member">member name</a></li>
-            <li data-mid="<% member_id %>"><a href="/message/teamname@member">member name</a></li>
-            <li class="divider"></li>
-          </ul>
-        </div>
+        test
       </div>
       <div class="col-md-8">
-        <div class="message-send-box">
-          <div class="input-group">
-           <input type="text" class="form-control" required autofocus>
-           <span class="input-group-btn">
-            <button id="sendmessage" class="btn btn-default" type="button">
-             Go!
-           </button>
-         </span>
-       </div>
-     </div>
-     <div class="message-box">
-      <div class="panel panel-default message">
-       <div class="panel-body">
-        test 
+        test
       </div>
-    </div>
-    <div class="message-box">
-      <div class="panel panel-default message">
-       <div class="panel-body">
-        这里显示message的内容，简单以  “说话者username： message ” 的格式展示就可以了
-      </div>
-    </div>
-  </div>
 </div>
-</div>
-</div>  
 </div>
 
 <!-- Copyright Section -->

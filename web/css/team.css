@@ -51,40 +51,54 @@ border-bottom: 0;
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
+  background:#fff;
+  border-style:solid;
+  border-width:5px;
+  border-color:#a0a0a0;
+  border-radius:10px;
+  padding-left:20px;
+  padding-right:20px;
+  margin-left:140px;
+  margin-right:140px;
 }
 
-.desk-container .row{padding-left: 100px; padding-right: 100px;}
-.desk-container .row .col-md-8{background: #fff; height: 400px; border-radius: 5px; margin-left: 20px;}
-.desk-container .row .col-md-3{color: #454545; height: 400px; border-radius: 5px;}
-.desk-container .row .col-md-3 .span2 .nav li{
+.desk-container .row .col-md-7{height: 400px; margin-left: 30px; background: #fff;}
+.desk-container .row .col-md-4{margin-left:30px;}
+.desk-container .row .col-md-4 .member-list{color: #454545;height:400px;}
+.desk-container .row .col-md-4 hr{
+  margin-top: 5px;
+  height: 1.5px;
+  border: 0px;
+  background-color: #454545;
+  color: #454545;
+}
+.desk-container .row .col-md-4 .span2 .nav li{
   color: #fff;
 }
-.desk-container .row .col-md-3 .span2 .nav .nav-header a{
+.desk-container .row .col-md-4 .span2 .nav .nav-header a{
   text-transform:capitalize;
   color: #fff;
   font-weight:bold;
   font-size:26px;
 }
-.desk-container #mybutton1{background:#fff; color:#a5d2da; font-size: 20px;}
-.desk-container #mybutton2{background:#fff; color:#a5d2da; font-size: 20px;}
-.desk-container .list-group-item{border-radius:10px;}
+.desk-container .member{
+  border-radius:5px;
+  margin-left:0px;
+  margin-top:5px;
+  margin-right:0px;
+  margin-bottom: :5px;
+  padding:5px;
+}
+.desk-container .list-group-item span{float:right;}
+.desk-container .list-group-item p{color:#454545; margin:0px; font-size:18px;}
 .desk-container .span6{ float:none; margin:0 auto; text-align:center;}
-.desk-container h2{ text-transform:uppercase; color:#fff; padding:0;font-size:50px;}
-.desk-container h4{ padding:0;font-size:26px;}
+.desk-container h2{ color:#454545; padding:0;font-size:50px;}
+.desk-container h4{ color:#454545; padding:0;font-size:26px;}
 
-.desk-container .row .col-md-8 .message-box .panel{
+.desk-container .row .col-md-7 .message-box .panel{
   margin:10px;
   padding-left: 10px;
   padding-right: 10px;
-}
-
-.desk-container .row .col-md-8 .message-send-box{
-  margin:10px;
-}
-
-.desk-container .row .col-md-8 .message-send-box .input-group .input-group-btn #sendmessage{
-  background: #a5d2da;
-  color: #fff;
 }
 
 
