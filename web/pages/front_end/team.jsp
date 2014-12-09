@@ -30,11 +30,13 @@ return;
     <script src="/js/bootstrap-dropdown.js" type="text/javascript"></script>
 </head>
 
+
 <body>
+
   <!-- Header Section -->
   <div id="headerSection">
     <div class="container">
-      <div class="span3 logo"><img src="/img/logo1.png" alt="" /></div>
+      <div class="span3 logo"><img src="img/logo.png" alt="" /></div>
       <div class="navbar">
         <div class="nav-collapse">
           <ul class="nav nav-pills">
@@ -59,14 +61,28 @@ return;
 
   <div class="desk-container">
     <div class="row">
-      <div class="col-md-3">
-        test
+      <div class="col-md-4">
+        <h4>Member List</h4>
+         <hr/>
+        <div class="member-list">
+          <div class="list-group-item member">
+            <p>test1<a href="#"><span class="glyphicon glyphicon-remove"></span></a></p><!-- 这里还差一个确认删除modal啊！ -->
+          </div>
+          <div class="list-group-item member">
+            <p>test2<a href="#"><span class="glyphicon glyphicon-remove"></span></a></p>
+          </div>
+          <div class="list-group-item member">
+            <p>test3<a href="#"><span class="glyphicon glyphicon-remove"></span></a></p>
+        </div>
       </div>
-      <div class="col-md-8">
-        test
+    </div>
+      <div class="col-md-7">
+        <h2>Team Name</h2>
+        <p>description</p>
       </div>
 </div>
 </div>
+
 
 <!-- Copyright Section -->
 <div id="footerSection">
