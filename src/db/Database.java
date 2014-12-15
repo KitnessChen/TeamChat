@@ -20,7 +20,6 @@ public class Database {
         String uri = Database.class.getResource("../../../Database/AccessDB.mdb").getFile().substring(1);
         //java 路径名含空格会变成%20
         uri = uri.replaceAll("%20", " ");
-        System.out.println(uri);
 //            System.out.println(uri);
 //        String url = "jdbc:odbc:driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=" + classUri + "../../../Database/AccessDB.mdb";
 

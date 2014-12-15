@@ -15,7 +15,7 @@ import java.sql.SQLException;
 /**
  * Created by whd on 2014/11/30.
  */
-public class SignUpServlet extends RedirectServlet {
+public class SignUpServlet extends BaseServlet {
 
     public SignUpServlet() {
         super("pages/front_end/signup.jsp");
@@ -27,6 +27,8 @@ public class SignUpServlet extends RedirectServlet {
         user.setUserName(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
         user.setEmail(request.getParameter("email"));
+
+        System.out.println(user.getUserName() + " " + user.getPassword());
 
         response.setContentType("text/html;charset=utf-8");
         try {

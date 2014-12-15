@@ -57,7 +57,9 @@ public class TeamServlet extends HttpServlet {
                 ResultSet resultSet = statement.executeQuery();
                 resultSet.next();
                 String teamId = Integer.toString(resultSet.getInt("ID"));
-                String sqlString = "create table TeamMessage" + teamId + "(FromUserId int, ToUserId int, PublishTime date, Content text(255))";
+                //create teammessage table
+                String sqlString = "create table TeamMessage" + teamId +
+                        "(ID counter, FromUserId int, ToUserId int, PublishDate date, PublishTime time, Content text(255))";
                 connection.createStatement().executeUpdate(sqlString);
                 response.getWriter().write("team created successfully");
             }

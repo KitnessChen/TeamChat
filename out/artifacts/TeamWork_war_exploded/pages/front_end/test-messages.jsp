@@ -2,6 +2,8 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--这里大概就是判定一下，如果用户未登录（cookie)就访问index，如果已登录就访问用户主页（/home）的页面（当前）--%>
 <%
@@ -36,14 +38,16 @@
 <body>
 <%
     Connection connection = Database.getConnection();
-    PreparedStatement statement = connection.prepareStatement("select * from TeamMessage1");
+    PreparedStatement statement = connection.prepareStatement("select * from TeamMessage5 order by ID asc ");
     ResultSet resultSet = statement.executeQuery();
+    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
     while (resultSet.next()) {
 %>
 <%=resultSet.getString("FromUserId")%>,
 <%=resultSet.getString("ToUserId")%>,
-<%=resultSet.getString("PublishTime")%>
-,<%=resultSet.getString("Content")%>
+<%=resultSet.getDate("PublishDate")%>,
+<%=resultSet.getTime("PublishTime")%>,
+<%=resultSet.getString("Content")%>
 <br/>
 <%
     }
@@ -76,7 +80,7 @@
                 <div class="input-group">
                     <input id="content" type="text" class="form-control" required autofocus>
              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
+                <button id="sendmessage" class="btn btn-default" type="button">
                     Go!
                 </button>
            </span>

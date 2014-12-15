@@ -54,11 +54,11 @@
 
 
     <servlet>
-        <servlet-name>RedirectMessageServlet</servlet-name>
+        <servlet-name>MessageServlet</servlet-name>
         <servlet-class>servlet.MessageServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>RedirectMessageServlet</servlet-name>
+        <servlet-name>MessageServlet</servlet-name>
         <url-pattern>/message</url-pattern>
     </servlet-mapping>
 

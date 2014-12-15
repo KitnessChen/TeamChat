@@ -26,6 +26,5 @@ public class Team {
         query.setString(1, teamName);
         query.setInt(2, creatorId);
         query.executeUpdate();
-        System.out.println("#####");
     }
 }

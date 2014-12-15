@@ -18,13 +18,14 @@ import java.sql.SQLException;
  */
 
 //TODO T^T
-public class SignInServlet extends RedirectServlet {
+public class SignInServlet extends BaseServlet {
 
     public SignInServlet() {
         super("pages/front_end/signin.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         User user = new User();
         user.setUserName(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
