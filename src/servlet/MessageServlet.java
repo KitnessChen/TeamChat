@@ -20,7 +20,6 @@ public class MessageServlet extends BaseServlet {
 
     public void sendPublicMessageAction(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        response.setContentType("text/html;charset=utf-8");
         String userName = request.getSession().getAttribute("username").toString();
         String userId = request.getSession().getAttribute("userid").toString();
 
@@ -43,7 +42,7 @@ public class MessageServlet extends BaseServlet {
     }
 
     public void sendPrivateMessageAction(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html;charset=utf-8");
+
         String userName = request.getSession().getAttribute("username").toString();
         String userId = request.getSession().getAttribute("userid").toString();
 

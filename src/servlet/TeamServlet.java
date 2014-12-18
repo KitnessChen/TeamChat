@@ -18,55 +18,53 @@ import java.sql.SQLException;
 /**
  * Created by whd on 2014/12/4.
  */
-public class TeamServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            response.setContentType("text/html;charset=utf-8");
+public class TeamServlet extends BaseServlet {
 
-            if (request.getParameter("type").equals("add team member")) {
-                //TODO check if the person has the right to let another person in
-                String userId = request.getParameter("userid");
-                String teamId = request.getParameter("teamid");
-                if (Validation.checkUserInTeam(userId, teamId)) {
-                    response.getWriter().write("already in team");
-                } else {
-                    Connection connection = Database.getConnection();
-                    PreparedStatement statement = connection.prepareStatement
-                            ("insert into Team_User (TeamId, UserId) values(?, ?)");
-                    statement.setString(1, teamId);
-                    statement.setString(2, userId);
-                    statement.executeUpdate();
-                    response.getWriter().write("team member added successfully");
-                }
-            } else if (request.getParameter("type").equals("create team")) {
-                String userId = request.getSession().getAttribute("userid").toString();
-                String teamName = request.getParameter("teamname");
+    public void addTeamMemberAction(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+        //TODO check if the person has the right to let another person in
 
-                Connection connection = Database.getConnection();
-                // insert into teams table
-                PreparedStatement statement = connection.prepareStatement
-                        ("insert into Teams (TeamName, CreatorId) values(?, ?)");
-                statement.setString(1, teamName);
-                statement.setString(2, userId);
-                statement.executeUpdate();
-                statement = connection.prepareStatement
-                        ("select ID from Teams where CreatorId = ? and TeamName = ?");
-                //get teamid of the recently created team
-                statement.setInt(1, Integer.parseInt(userId));
-                statement.setString(2, teamName);
-                ResultSet resultSet = statement.executeQuery();
-                resultSet.next();
-                String teamId = Integer.toString(resultSet.getInt("ID"));
-                //create teammessage table
-                String sqlString = "create table TeamMessage" + teamId +
-                        "(ID counter, FromUserId int, ToUserId int, PublishDate date, PublishTime time, Content text(255))";
-                connection.createStatement().executeUpdate(sqlString);
-                response.getWriter().write("team created successfully");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        String userId = request.getParameter("userid");
+        String teamId = request.getParameter("teamid");
+        if (Validation.checkUserInTeam(userId, teamId)) {
+            response.getWriter().write("already in team");
+        } else {
+            Connection connection = Database.getConnection();
+            PreparedStatement statement = connection.prepareStatement
+                    ("insert into Team_User (TeamId, UserId) values(?, ?)");
+            statement.setString(1, teamId);
+            statement.setString(2, userId);
+            statement.executeUpdate();
+            response.getWriter().write("team member added successfully");
         }
     }
+
+    public void createTeamAction(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+        String userId = request.getSession().getAttribute("userid").toString();
+        String teamName = request.getParameter("teamname");
+
+        Connection connection = Database.getConnection();
+        // insert into teams table
+        PreparedStatement statement = connection.prepareStatement
+                ("insert into Teams (TeamName, CreatorId) values(?, ?)");
+        statement.setString(1, teamName);
+        statement.setString(2, userId);
+        statement.executeUpdate();
+        statement = connection.prepareStatement
+                ("select ID from Teams where CreatorId = ? and TeamName = ?");
+        //get teamid of the recently created team
+        statement.setInt(1, Integer.parseInt(userId));
+        statement.setString(2, teamName);
+        ResultSet resultSet = statement.executeQuery();
+        resultSet.next();
+        String teamId = Integer.toString(resultSet.getInt("ID"));
+        //create teammessage table
+        String sqlString = "create table TeamMessage" + teamId +
+                "(ID counter, FromUserId int, ToUserId int, PublishDate date, PublishTime time, Content text(255))";
+        connection.createStatement().executeUpdate(sqlString);
+        response.getWriter().write("team created successfully");
+
+    }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {

@@ -5,6 +5,7 @@ $(document).ready(function () {
         var username = $("#username").val();
         var password = $("#password").val();
         var data = {
+            'action': 'signUp',
             'email': email,
             'username': username,
             'password': password

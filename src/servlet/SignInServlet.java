@@ -3,11 +3,9 @@ package servlet;
 import db.Database;
 import dbobject.User;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -21,11 +19,10 @@ import java.sql.SQLException;
 public class SignInServlet extends BaseServlet {
 
     public SignInServlet() {
-        super("pages/front_end/signin.jsp");
+        super("/pages/front_end/signin.jsp");
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    public void signInAction(HttpServletRequest request, HttpServletResponse response) {
         User user = new User();
         user.setUserName(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
@@ -39,7 +36,6 @@ public class SignInServlet extends BaseServlet {
             ResultSet resultSet = statement.executeQuery();
 
             HttpSession session = request.getSession(true);
-            response.setContentType("text/html;charset=utf-8");
             if (null != session.getAttribute("UserName")) {
                 response.getWriter().write("already logged in");
             } else if (!resultSet.next() ||
@@ -52,7 +48,7 @@ public class SignInServlet extends BaseServlet {
                 response.getWriter().write("log in succeeded");
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

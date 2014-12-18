@@ -18,11 +18,10 @@ import java.sql.SQLException;
 public class SignUpServlet extends BaseServlet {
 
     public SignUpServlet() {
-        super("pages/front_end/signup.jsp");
+        super("/pages/front_end/signup.jsp");
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //TODO get parameters
+    protected void signUpAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
         user.setUserName(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
@@ -30,7 +29,6 @@ public class SignUpServlet extends BaseServlet {
 
         System.out.println(user.getUserName() + " " + user.getPassword());
 
-        response.setContentType("text/html;charset=utf-8");
         try {
             Connection connection = Database.getConnection();
             PreparedStatement statement = connection.prepareStatement("select * from Users where UserName = ? ");

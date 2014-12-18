@@ -12,8 +12,8 @@ import java.io.IOException;
  */
 
 //TODO T^T
-public class SignOutServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class SignOutServlet extends BaseServlet {
+    public void logOutAction(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
         if (null != session) {
             session.removeAttribute("username");

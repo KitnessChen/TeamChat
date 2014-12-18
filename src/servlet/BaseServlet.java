@@ -14,16 +14,23 @@ import java.lang.reflect.Method;
 public class BaseServlet extends HttpServlet {
     private String jspLocation;
 
+    public BaseServlet() {
+        this.jspLocation = "/pages/front_end/404.jsp";
+    }
+
     public BaseServlet(String jspLocation) {
         this.jspLocation = jspLocation;
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher(jspLocation).forward(request, response);
+        if (null == request.getParameter("action")) {
+            request.getRequestDispatcher(jspLocation).forward(request, response);
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String actionName = request.getParameter("action");
+        response.setContentType("text/html;charset=utf-8");
         try {
             Method method = this.getClass().getDeclaredMethod
                     (actionName + "Action", new Class[]{HttpServletRequest.class, HttpServletResponse.class});
