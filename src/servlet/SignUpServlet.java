@@ -15,13 +15,13 @@ import java.sql.SQLException;
 /**
  * Created by whd on 2014/11/30.
  */
-public class SignUpServlet extends BaseServlet {
+public class SignupServlet extends BaseServlet {
 
-    public SignUpServlet() {
+    public SignupServlet() {
         super("/pages/front_end/signup.jsp");
     }
 
-    protected void signUpAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void signupAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
         user.setUserName(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));

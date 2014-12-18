@@ -26,7 +26,7 @@
     <!--other servlet-->
     <servlet>
         <servlet-name>SignInServlet</servlet-name>
-        <servlet-class>servlet.SignInServlet</servlet-class>
+        <servlet-class>servlet.SigninServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignInServlet</servlet-name>
@@ -35,7 +35,7 @@
 
     <servlet>
         <servlet-name>SignUpServlet</servlet-name>
-        <servlet-class>servlet.SignUpServlet</servlet-class>
+        <servlet-class>servlet.SignupServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
@@ -64,7 +64,7 @@
 
     <servlet>
         <servlet-name>SignOutServlet</servlet-name>
-        <servlet-class>servlet.SignOutServlet</servlet-class>
+        <servlet-class>servlet.SignoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SignOutServlet</servlet-name>
