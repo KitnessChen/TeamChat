@@ -29,11 +29,11 @@ public class MessageServlet extends BaseServlet {
         }
 
         PublicMessage message = new PublicMessage();
-        message.setContent(request.getParameter("content").toString());
-        message.setFromUserId(Integer.parseInt(userId));
-        message.setPublishDate(new Date(System.currentTimeMillis()));
-        message.setPublishTime(new Time(System.currentTimeMillis()));
-        message.setTeamId(Integer.parseInt(request.getParameter("teamid").toString()));
+        message.content = request.getParameter("content").toString();
+        message.fromUserId = Integer.parseInt(userId);
+        message.publishDate = new Date(System.currentTimeMillis());
+        message.publishTime = new Time(System.currentTimeMillis());
+        message.teamId = Integer.parseInt(request.getParameter("teamid").toString());
         try {
             message.insert();
         } catch (SQLException e) {
@@ -52,12 +52,12 @@ public class MessageServlet extends BaseServlet {
         }
 
         PrivateMessage message = new PrivateMessage();
-        message.setContent(request.getParameter("content").toString());
-        message.setFromUserId(Integer.parseInt(userId));
-        message.setPublishDate(new Date(System.currentTimeMillis()));
-        message.setPublishTime(new Time(System.currentTimeMillis()));
-        message.setTeamId(Integer.parseInt(request.getParameter("teamid").toString()));
-        message.setToUserId(Integer.parseInt(request.getParameter("touserid").toString()));
+        message.content = request.getParameter("content").toString();
+        message.fromUserId = Integer.parseInt(userId);
+        message.publishDate = new Date(System.currentTimeMillis());
+        message.publishTime = new Time(System.currentTimeMillis());
+        message.teamId = Integer.parseInt(request.getParameter("teamid").toString());
+        message.toUserId = Integer.parseInt(request.getParameter("touserid").toString());
         try {
             message.insert();
         } catch (SQLException e) {

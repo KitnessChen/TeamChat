@@ -12,8 +12,8 @@ import java.sql.SQLException;
 // id, name
 //TODO complete
 public class Team {
-    private String teamName;
-    private int creatorId;
+    public String teamName;
+    public int creatorId;
 
     public Team(String teamName, int creatorId) {
         this.teamName = teamName;

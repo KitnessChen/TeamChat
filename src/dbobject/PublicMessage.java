@@ -5,6 +5,6 @@ package dbobject;
  */
 public class PublicMessage extends Message {
     public PublicMessage() {
-        setToUserId(-1);
+        toUserId = -1;
     }
 }

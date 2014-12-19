@@ -23,11 +23,11 @@ public class SignupServlet extends BaseServlet {
 
     protected void signupAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
-        user.setUserName(request.getParameter("username"));
-        user.setPassword(request.getParameter("password"));
-        user.setEmail(request.getParameter("email"));
+        user.userName = request.getParameter("username");
+        user.password = request.getParameter("password");
+        user.email = request.getParameter("email");
 
-        System.out.println(user.getUserName() + " " + user.getPassword());
+//        System.out.println(user.getUserName() + " " + user.getPassword());
 
         try {
             Connection connection = Database.getConnection();
@@ -39,9 +39,9 @@ public class SignupServlet extends BaseServlet {
             } else {
                 statement = connection.prepareStatement
                         ("insert into Users(UserName, Password, Email) values(?, ?, ?)");
-                statement.setString(1, user.getUserName());
-                statement.setString(2, user.getPassword());
-                statement.setString(3, user.getEmail());
+                statement.setString(1, user.userName);
+                statement.setString(2, user.password);
+                statement.setString(3, user.email);
                 statement.executeUpdate();
                 response.getWriter().write("register succeeded");
             }

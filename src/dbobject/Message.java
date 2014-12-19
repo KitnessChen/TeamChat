@@ -11,56 +11,13 @@ import java.sql.*;
 //TODO complete
 public class Message {
 
-    private Date publishDate;
-    private Time publishTime;
-    private String content;
-    private int teamId;
-    private int fromUserId;
-    private int toUserId;
-
-    public Date getPublishDate() {
-        return publishDate;
-    }
-
-    public void setPublishDate(Date publishDate) {
-        this.publishDate = publishDate;
-    }
-
-    public void setPublishTime(Time publishTime) {
-        this.publishTime = publishTime;
-    }
-
-    public int getToUserId() {
-        return toUserId;
-    }
-
-    public void setToUserId(int toUserId) {
-        this.toUserId = toUserId;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public int getTeamId() {
-        return teamId;
-    }
-
-    public void setTeamId(int teamId) {
-        this.teamId = teamId;
-    }
-
-    public int getFromUserId() {
-        return fromUserId;
-    }
-
-    public void setFromUserId(int fromUserId) {
-        this.fromUserId = fromUserId;
-    }
+    public Date publishDate;
+    public Time publishTime;
+    public String type;
+    public String content;
+    public int teamId;
+    public int fromUserId;
+    public int toUserId;
 
     public void insert() throws SQLException, UnknownHostException {
         Connection connection = Database.getConnection();
