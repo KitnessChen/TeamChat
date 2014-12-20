@@ -1,14 +1,10 @@
 package servlet;
 
-import db.Database;
+import db.Query;
 import dbobject.User;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -21,7 +17,7 @@ public class SignupServlet extends BaseServlet {
         super("/pages/front_end/signup.jsp");
     }
 
-    protected void signupAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void signupAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
         User user = new User();
         user.userName = request.getParameter("username");
         user.password = request.getParameter("password");
@@ -30,19 +26,13 @@ public class SignupServlet extends BaseServlet {
 //        System.out.println(user.getUserName() + " " + user.getPassword());
 
         try {
-            Connection connection = Database.getConnection();
-            PreparedStatement statement = connection.prepareStatement("select * from Users where UserName = ? ");
-            statement.setString(1, request.getParameter("username"));
-            ResultSet resultSet = statement.executeQuery();
+            ResultSet resultSet = new Query("Users")
+                    .where("UserName", '=', request.getParameter("username"))
+                    .executeQuery();
             if (resultSet.next()) {
                 response.getWriter().write("username is already used");
             } else {
-                statement = connection.prepareStatement
-                        ("insert into Users(UserName, Password, Email) values(?, ?, ?)");
-                statement.setString(1, user.userName);
-                statement.setString(2, user.password);
-                statement.setString(3, user.email);
-                statement.executeUpdate();
+                user.insert();
                 response.getWriter().write("register succeeded");
             }
         } catch (SQLException e) {

@@ -1,5 +1,6 @@
 package servlet;
 
+import dbobject.PrivateMessage;
 import dbobject.PublicMessage;
 
 import javax.servlet.http.HttpServletRequest;
@@ -50,7 +51,7 @@ public class MessageServlet extends BaseServlet {
         }
 
         String tableName = "TeamMessage" + request.getParameter("teamid");
-        PublicMessage message = new PublicMessage(tableName);
+        PrivateMessage message = new PrivateMessage(tableName);
         message.content = request.getParameter("content").toString();
         message.fromUserId = Integer.parseInt(userId);
         message.publishDate = new Date(System.currentTimeMillis());

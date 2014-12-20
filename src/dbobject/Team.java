@@ -1,30 +1,16 @@
 package dbobject;
 
-import db.Database;
-
-import java.net.UnknownHostException;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 /**
  * Created by whd on 2014/12/1.
  */
 // id, name
 //TODO complete
-public class Team {
+public class Team extends BaseDatabaseObject {
     public String teamName;
     public int creatorId;
 
-    public Team(String teamName, int creatorId) {
-        this.teamName = teamName;
-        this.creatorId = creatorId;
+    public Team() throws Exception {
+        super("Teams");
     }
 
-    public void insert() throws SQLException, UnknownHostException {
-        PreparedStatement query = Database.getConnection().
-                prepareStatement("insert into Teams(teamName, creatorId) values(?, ?)");
-        query.setString(1, teamName);
-        query.setInt(2, creatorId);
-        query.executeUpdate();
-    }
 }

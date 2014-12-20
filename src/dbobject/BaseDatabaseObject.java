@@ -13,17 +13,22 @@ import java.util.ArrayList;
 public class BaseDatabaseObject {
 
     private String defaultTableName;
+    private Connection connection;
 
-    public BaseDatabaseObject(String defaultTableName) {
+    public BaseDatabaseObject(String defaultTableName) throws Exception {
         this.defaultTableName = defaultTableName;
+        connection = Database.getConnection();
+    }
+
+    public Connection getConnection() {
+        return connection;
     }
 
     public void insert(String tableName) throws SQLException, UnknownHostException, IllegalAccessException {
-        Connection connection = Database.getConnection();
         Field fields[] = this.getClass().getFields();
         ArrayList<Field> fieldList = new ArrayList<Field>();
         for (int i = 0; i < fields.length; i++) {
-            if (fields[i].getName().equals("Id")) continue;
+            if (fields[i].getName().equals("id")) continue;
             fieldList.add(fields[i]);
         }
 
@@ -53,6 +58,7 @@ public class BaseDatabaseObject {
                 statement.setTime(i + 1, (Time) fieldList.get(i).get(this));
             }
         }
+        System.out.println("insert into " + tableName + "(" + fieldString + ")" + " values " + " (" + unknownMarkString + ") ");
         statement.executeUpdate();
     }
 

@@ -11,7 +11,6 @@ import java.io.IOException;
  * Created by whd on 2014/11/30.
  */
 
-//TODO T^T
 public class SignoutServlet extends BaseServlet {
     public void signoutAction(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);

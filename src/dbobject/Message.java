@@ -16,7 +16,7 @@ public class Message extends BaseDatabaseObject {
     public int fromUserId;
     public int toUserId;
 
-    public Message(String defaultTableName) {
+    public Message(String defaultTableName) throws Exception {
         super(defaultTableName);
     }
 
