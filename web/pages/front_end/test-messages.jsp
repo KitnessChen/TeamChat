@@ -1,9 +1,3 @@
-<%@ page import="db.Database" %>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.PreparedStatement" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.text.DateFormat" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--这里大概就是判定一下，如果用户未登录（cookie)就访问index，如果已登录就访问用户主页（/home）的页面（当前）--%>
 <%
@@ -36,22 +30,22 @@
     <script src="/pages/js/messages.js"></script>
 </head>
 <body>
-<%
-    Connection connection = Database.getConnection();
-    PreparedStatement statement = connection.prepareStatement("select * from TeamMessage5 order by ID asc ");
-    ResultSet resultSet = statement.executeQuery();
-    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-    while (resultSet.next()) {
-%>
-<%=resultSet.getString("FromUserId")%>,
-<%=resultSet.getString("ToUserId")%>,
-<%=resultSet.getDate("PublishDate")%>,
-<%=resultSet.getTime("PublishTime")%>,
-<%=resultSet.getString("Content")%>
-<br/>
-<%
-    }
-%>
+<%--<%--%>
+<%--Connection connection = Database.getConnection();--%>
+<%--PreparedStatement statement = connection.prepareStatement("select * from TeamMessage5 order by Id asc ");--%>
+<%--ResultSet resultSet = statement.executeQuery();--%>
+<%--DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");--%>
+<%--while (resultSet.next()) {--%>
+<%--%>--%>
+<%--<%=resultSet.getString("FromUserId")%>,--%>
+<%--<%=resultSet.getString("ToUserId")%>,--%>
+<%--<%=resultSet.getDate("PublishDate")%>,--%>
+<%--<%=resultSet.getTime("PublishTime")%>,--%>
+<%--<%=resultSet.getString("Content")%>--%>
+<%--<br/>--%>
+<%--<%--%>
+<%--}--%>
+<%--%>--%>
 <div class="container">
     <div class="row">
         <div class="col-md-2">
@@ -78,6 +72,7 @@
         <div class="col-md-8">
             <div class="message-send-box">
                 <div class="input-group">
+                    <input id="teamid" type="text" class="form-control">
                     <input id="content" type="text" class="form-control" required autofocus>
              <span class="input-group-btn">
                 <button id="sendmessage" class="btn btn-default" type="button">

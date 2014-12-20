@@ -16,7 +16,7 @@
                 var teamid = $('#teamid').val();
                 var userid = $('#userid').val();
                 var parameters = {
-                    'type': 'add team member',
+                    'action': 'addTeamMember',
                     'teamid': teamid,
                     'userid': userid
                 };
@@ -27,7 +27,7 @@
 
             $("#get").click(function () {
                 var parameters = {
-                    'type': 'get team members',
+                    'action': 'getTeamMemberList',
                     'teamid': 1
                 };
                 $.get("/team", parameters, function (data) {
@@ -39,7 +39,7 @@
 
             $('#create_team').click(function () {
                 $.post('/team', {
-                    'type': 'create team',
+                    'action': 'createTeam',
                     'teamname': $('#teamname').val()
                 }, function (msg) {
                     alert(msg);

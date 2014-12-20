@@ -6,7 +6,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -50,60 +49,65 @@ public class TeamServlet extends BaseServlet {
         statement.setString(2, userId);
         statement.executeUpdate();
         statement = connection.prepareStatement
-                ("select ID from Teams where CreatorId = ? and TeamName = ?");
+                ("select Id from Teams where CreatorId = ? and TeamName = ?");
         //get teamid of the recently created team
         statement.setInt(1, Integer.parseInt(userId));
         statement.setString(2, teamName);
         ResultSet resultSet = statement.executeQuery();
         resultSet.next();
-        String teamId = Integer.toString(resultSet.getInt("ID"));
+        String teamId = Integer.toString(resultSet.getInt("Id"));
         //create teammessage table
         String sqlString = "create table TeamMessage" + teamId +
-                "(ID counter, FromUserId int, ToUserId int, PublishDate date, PublishTime time, Content text(255))";
+                "(Id counter, FromUserId int,ToUserId int, PublishDate date, PublishTime time, ContentType text(20), Content text(255))";
         connection.createStatement().executeUpdate(sqlString);
         response.getWriter().write("team created successfully");
 
     }
 
+    public void getTeamMemberList(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+        Connection connection = Database.getConnection();
+        PreparedStatement statement = connection.prepareStatement
+                ("select Team_User.UserId, Users.UserName from Users, Team_User where " +
+                        "Users.Id = Team_User.UserId and Team_User.TeamId = ?");
+        statement.setInt(1, Integer.parseInt(request.getParameter("teamid")));
+        ResultSet resultSet = statement.executeQuery();
+        JSONObject result = new JSONObject();
+        JSONArray array = new JSONArray();
+        while (resultSet.next()) {
+            JSONObject json = new JSONObject();
+            json.put("userid", resultSet.getInt(1));
+            json.put("username", resultSet.getString(2));
+            array.put(json);
+        }
+        result.put("memberList", array);
+        response.getWriter().write(result.toString());
+    }
+
+    public void getTeamList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+        Connection connection = null;
+        connection = Database.getConnection();
+        PreparedStatement statement = connection.prepareStatement
+                ("select Team_User.TeamId, Teams.TeamName from Teams, Team_User where " +
+                        "Teams.Id = Team_User.TeamId and Team_User.UserId = ?");
+        statement.setInt(1, Integer.parseInt(request.getParameter("userid")));
+        ResultSet resultSet = statement.executeQuery();
+        JSONObject result = new JSONObject();
+        JSONArray array = new JSONArray();
+        while (resultSet.next()) {
+            JSONObject json = new JSONObject();
+            json.put("teamid", resultSet.getInt(1));
+            json.put("teamname", resultSet.getString(2));
+            array.put(json);
+        }
+        result.put("teamList", array);
+        response.getWriter().write(result.toString());
+    }
+
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            response.setContentType("text/html;charset=utf-8");
             if (request.getParameter("type").equals("get team members")) {
-                Connection connection = Database.getConnection();
-                PreparedStatement statement = connection.prepareStatement
-                        ("select Team_User.UserId, Users.UserName from Users, Team_User where " +
-                                "Users.ID = Team_User.UserId and Team_User.TeamId = ?");
-                statement.setInt(1, Integer.parseInt(request.getParameter("teamid")));
-                ResultSet resultSet = statement.executeQuery();
-                JSONObject result = new JSONObject();
-                JSONArray array = new JSONArray();
-                while (resultSet.next()) {
-                    JSONObject json = new JSONObject();
-                    json.put("userid", resultSet.getInt(1));
-                    json.put("username", resultSet.getString(2));
-                    array.put(json);
-                }
-                result.put("memberList", array);
-                response.getWriter().write(result.toString());
             } else if (request.getParameter("type").equals("get one\'s teams")) {
-                Connection connection = null;
-                connection = Database.getConnection();
-                PreparedStatement statement = connection.prepareStatement
-                        ("select Team_User.TeamId, Teams.TeamName from Teams, Team_User where " +
-                                "Teams.ID = Team_User.TeamId and Team_User.UserId = ?");
-                statement.setInt(1, Integer.parseInt(request.getParameter("userid")));
-                ResultSet resultSet = statement.executeQuery();
-                JSONObject result = new JSONObject();
-                JSONArray array = new JSONArray();
-                while (resultSet.next()) {
-                    JSONObject json = new JSONObject();
-                    json.put("teamid", resultSet.getInt(1));
-                    json.put("teamname", resultSet.getString(2));
-                    array.put(json);
-                }
-                result.put("teamList", array);
-                response.getWriter().write(result.toString());
             }
         } catch (Exception e) {
 

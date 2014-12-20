@@ -1,11 +1,9 @@
 package servlet;
 
-import dbobject.PrivateMessage;
 import dbobject.PublicMessage;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -18,7 +16,7 @@ public class MessageServlet extends BaseServlet {
         super("/pages/front_end/messages.jsp");
     }
 
-    public void sendPublicMessageAction(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void sendPublicMessageAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         String userName = request.getSession().getAttribute("username").toString();
         String userId = request.getSession().getAttribute("userid").toString();
@@ -28,12 +26,12 @@ public class MessageServlet extends BaseServlet {
             return;
         }
 
-        PublicMessage message = new PublicMessage();
+        String tableName = "TeamMessage" + request.getParameter("teamid");
+        PublicMessage message = new PublicMessage(tableName);
         message.content = request.getParameter("content").toString();
         message.fromUserId = Integer.parseInt(userId);
         message.publishDate = new Date(System.currentTimeMillis());
         message.publishTime = new Time(System.currentTimeMillis());
-        message.teamId = Integer.parseInt(request.getParameter("teamid").toString());
         try {
             message.insert();
         } catch (SQLException e) {
@@ -41,7 +39,7 @@ public class MessageServlet extends BaseServlet {
         }
     }
 
-    public void sendPrivateMessageAction(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void sendPrivateMessageAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
         String userName = request.getSession().getAttribute("username").toString();
         String userId = request.getSession().getAttribute("userid").toString();
@@ -51,12 +49,12 @@ public class MessageServlet extends BaseServlet {
             return;
         }
 
-        PrivateMessage message = new PrivateMessage();
+        String tableName = "TeamMessage" + request.getParameter("teamid");
+        PublicMessage message = new PublicMessage(tableName);
         message.content = request.getParameter("content").toString();
         message.fromUserId = Integer.parseInt(userId);
         message.publishDate = new Date(System.currentTimeMillis());
         message.publishTime = new Time(System.currentTimeMillis());
-        message.teamId = Integer.parseInt(request.getParameter("teamid").toString());
         message.toUserId = Integer.parseInt(request.getParameter("touserid").toString());
         try {
             message.insert();

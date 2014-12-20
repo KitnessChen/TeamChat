@@ -6,7 +6,7 @@ $(document).ready(function () {
         var content = $("#content").val();
         var data = {
             'action': 'sendPublicMessage',
-            'teamid': 5,
+            'teamid': $('#teamid').val(),
             'touserid': -1,
             'content': content
         };
@@ -14,4 +14,5 @@ $(document).ready(function () {
 //            alert("!");
         });
     });
-});
+})
+;

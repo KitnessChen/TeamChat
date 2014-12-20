@@ -41,7 +41,7 @@ public class SigninServlet extends BaseServlet {
                     !resultSet.getString("Password").equals(user.password)) {
                 response.getWriter().write("log in failed");
             } else {
-                user.id = resultSet.getString("ID");
+                user.id = resultSet.getString("Id");
                 session.setAttribute("username", user.userName);
                 session.setAttribute("userid", user.id);
                 response.getWriter().write("log in succeeded");
