@@ -66,13 +66,13 @@ return;
          <hr/>
         <div class="member-list">
           <div class="list-group-item member">
-            <p>test1<a href="#"><span class="glyphicon glyphicon-remove"></span></a></p><!-- 这里还差一个确认删除modal啊！ -->
+            <p>test1<a href="/remove/teamname"><span class="glyphicon glyphicon-remove"></span></a></p>
           </div>
           <div class="list-group-item member">
-            <p>test2<a href="#"><span class="glyphicon glyphicon-remove"></span></a></p>
+            <p>test2<a href="/remove/teamname"><span class="glyphicon glyphicon-remove"></span></a></p>
           </div>
           <div class="list-group-item member">
-            <p>test3<a href="#"><span class="glyphicon glyphicon-remove"></span></a></p>
+            <p>test3<a href="/remove/teamname"><span class="glyphicon glyphicon-remove"></span></a></p>
         </div>
       </div>
     </div>
@@ -80,8 +80,8 @@ return;
         <h2>Team Name</h2>
         <p>description</p>
       </div>
-</div>
-</div>
+    </div>
+  </div>
 
 
 <!-- Copyright Section -->
