@@ -1,6 +1,7 @@
 body {
   padding-bottom: 40px;
   background:#a5d2da; color: #454545; font-family: "Myriad Pro";
+  min-height: 0;
 }
 
 a,a:hover{text-decoration:none; color:#454545}
@@ -83,22 +84,62 @@ border-bottom: 0;
 }
 .desk-container .member{
   border-radius:5px;
-  margin-left:0px;
+  margin-left:0;
   margin-top:5px;
-  margin-right:0px;
-  margin-bottom: :5px;
+  margin-right:0;
+  margin-bottom:5px;
   padding:5px;
 }
-.desk-container .list-group-item span{float:right;}
+.desk-container .row .col-md-4 span{float:right;}
 .desk-container .list-group-item p{color:#454545; margin:0px; font-size:18px;}
 .desk-container .span6{ float:none; margin:0 auto; text-align:center;}
 .desk-container h2{ color:#454545; padding:0;font-size:50px;}
 .desk-container h4{ color:#454545; padding:0;font-size:26px;}
 
-.desk-container .row .col-md-7 .message-box .panel{
-  margin:10px;
+.desk-container .row .col-md-7{
+  margin-left:40px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 0;
   padding-left: 10px;
   padding-right: 10px;
+}
+.desk-container .row .col-md-7 .team-name{
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+.desk-container .row .col-md-7 .team-name h2{
+  font-size: 50px;
+}
+.desk-container .row .col-md-7 .team-name .input-group .btn-default{
+  background-color: #a5d2da;
+  color: #fff;
+  margin-top:5px;
+  height:50px;
+  font-size: 20px;
+}
+.desk-container .row .col-md-7 .team-name .input-group input{
+  margin-top:5px;
+  height:50px;
+  font-size: 30px;
+}
+.desk-container .row .col-md-7 .team-description h4{
+  font-size: 32px;
+}
+.desk-container .row .col-md-7 .team-description input{
+  font-size: 30px;
+}
+.desk-container .row .col-md-7 .team-description .input-group .btn-default{
+  background-color: #a5d2da;
+  color: #fff;
+  margin-top:10px;
+  height:40px;
+  font-size: 16px;
+}
+.desk-container .row .col-md-7 .team-description .input-group input{
+  margin-top:10px;
+  height:40px;
+  font-size: 24px;
 }
 
 

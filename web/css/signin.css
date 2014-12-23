@@ -1,6 +1,7 @@
 body {
   padding-bottom: 40px;
   background:#a5d2da; color: #454545; font-family: "Myriad Pro";
+  min-height: 0;
 }
 
 a,a:hover{text-decoration:none; color:#454545}
