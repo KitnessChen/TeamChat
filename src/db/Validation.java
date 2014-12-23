@@ -7,10 +7,11 @@ import java.sql.ResultSet;
  */
 public class Validation {
     public static boolean checkUserInTeam(int userId, int teamId) throws Exception {
-        ResultSet resultSet = new Query("Team_User")
-                .where("UserId", '=', userId)
+        ResultSet resultSet = new Query()
+                .from("Team_User")
+                .where("UserId", "=", userId)
                 .and()
-                .where("TeamId", '=', teamId)
+                .where("TeamId", "=", teamId)
                 .executeQuery();
         if (resultSet.next())
             return true;

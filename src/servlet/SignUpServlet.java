@@ -26,8 +26,9 @@ public class SignupServlet extends BaseServlet {
 //        System.out.println(user.getUserName() + " " + user.getPassword());
 
         try {
-            ResultSet resultSet = new Query("Users")
-                    .where("UserName", '=', request.getParameter("username"))
+            ResultSet resultSet = new Query()
+                    .from("Users")
+                    .where("UserName", "=", request.getParameter("username"))
                     .executeQuery();
             if (resultSet.next()) {
                 response.getWriter().write("username is already used");

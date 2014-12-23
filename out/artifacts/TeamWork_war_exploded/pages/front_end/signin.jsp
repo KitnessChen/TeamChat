@@ -50,7 +50,7 @@
                     <input type="checkbox" value="remember-me"> Remember me(Doing)
                 </label>
             </div>
-            <button class="btn btn-lg btn-block btn-primary" type="submit">Sign in</button>
+            <button class="btn btn-lg btn-block btn-primary" type="button">Sign in</button>
             <div class="action-wrapper clearfix">
                 <a href="/forgot" class="forget">Forgot Password��</a>
                 <a href="/signup" class="signup pull-right">Sign up</a>

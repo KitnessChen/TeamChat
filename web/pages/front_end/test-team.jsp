@@ -28,11 +28,23 @@
             $("#get").click(function () {
                 var parameters = {
                     'action': 'getTeamMemberList',
-                    'teamid': 1
+                    'teamid': $("#getteamid").val()
                 };
                 $.get("/team", parameters, function (data) {
                     for (var i in data.memberList) {
+                        console.log(data.memberList[i]);
                         $('#container')[0].innerHTML += data.memberList[i].username + ",";
+                    }
+                }, "json");
+            });
+            $("#getteams").click(function () {
+                var parameters = {
+                    'action': 'getTeamList',
+                    'userid': $("#getuserid").val()
+                };
+                $.get("/team", parameters, function (data) {
+                    for (var i in data.teamList) {
+                        console.log(data.teamList[i]);
                     }
                 }, "json");
             });
@@ -59,13 +71,20 @@
 </div>
 <button id="submit">添加</button>
 
-<button id="get">获得所有成员</button>
+<div>
+    <input type="text" id="getteamid" value="getteamid"/>
+    <button id="get">获得所有成员</button>
+</div>
 <div>
     <input type="text" id="teamname" value="团队名称"/>
     <button id="create_team">创建团队</button>
 </div>
+<div>
+    <input type="text" id="getuserid" value="userid"/>
+    <button id="getteams">获得所有团队</button>
+</div>
 <div id="container">
-    123
+
 </div>
 
 </body>

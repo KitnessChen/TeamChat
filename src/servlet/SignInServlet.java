@@ -26,8 +26,9 @@ public class SigninServlet extends BaseServlet {
 
         Connection connection = null;
         try {
-            ResultSet resultSet = new Query("Users")
-                    .where("UserName", '=', user.userName)
+            ResultSet resultSet = new Query()
+                    .from("Users")
+                    .where("UserName", "=", user.userName)
                     .executeQuery();
 
             HttpSession session = request.getSession(true);

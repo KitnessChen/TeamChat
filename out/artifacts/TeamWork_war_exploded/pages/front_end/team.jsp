@@ -28,6 +28,10 @@ return;
     <script src="/js/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="/js/bootstrap-dropdown.js" type="text/javascript"></script>
+<<<<<<< HEAD
+=======
+    <script src="/pages/js/bootstrap-dropdown.js" type="text/javascript"></script>
+>>>>>>> 267aaae310b26003908508ada0666360148e5608
 </head>
 
 
@@ -36,7 +40,11 @@ return;
   <!-- Header Section -->
   <div id="headerSection">
     <div class="container">
+<<<<<<< HEAD
       <div class="span3 logo"><img src="img/logo.png" alt="" /></div>
+=======
+      <div class="span3 logo"><img src="../../img/logo1.png" alt="" /></div>
+>>>>>>> 267aaae310b26003908508ada0666360148e5608
       <div class="navbar">
         <div class="nav-collapse">
           <ul class="nav nav-pills">
@@ -62,27 +70,55 @@ return;
   <div class="desk-container">
     <div class="row">
       <div class="col-md-4">
-        <h4>Member List</h4>
+        <h4>Member List<a class="add-member" data-toggle="modal" data-target="#AddMemberModal"><span class="glyphicon glyphicon-plus-sign"></span></a></h4>
          <hr/>
         <div class="member-list">
           <div class="list-group-item member">
-            <p>test1<a href="#"><span class="glyphicon glyphicon-remove"></span></a></p><!-- 这里还差一个确认删除modal啊！ -->
+            <p class="member">test1<a class="remove-member" href="#"><span class="glyphicon glyphicon-remove"></span></a></p>
           </div>
           <div class="list-group-item member">
-            <p>test2<a href="#"><span class="glyphicon glyphicon-remove"></span></a></p>
+            <p class="member">test2<a class="remove-member" href="#"><span class="glyphicon glyphicon-remove"></span></a></p>
           </div>
           <div class="list-group-item member">
-            <p>test3<a href="#"><span class="glyphicon glyphicon-remove"></span></a></p>
+            <p class="member">test3<a class="remove-member" href="#"><span class="glyphicon glyphicon-remove"></span></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="team-name"> 
+          <h2 class="name">Team Name  <a class="edit-name" href="#"><span class="glyphicon glyphicon-pencil"></span></a></h2>
+        </div>
+        <div class="team-description">
+          <h4 class="description">description  <a class="edit-description" href="#"><span class="glyphicon glyphicon-pencil"></span></a></h4>
         </div>
       </div>
     </div>
-      <div class="col-md-7">
-        <h2>Team Name</h2>
-        <p>description</p>
-      </div>
-</div>
-</div>
+  </div>
 
+
+  <!-- Modal Section -->
+  <div class="modal fade" id="AddMemberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add member</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please input member's name:</p>
+          <form id="create-team-form" action method="post" class="auth-form form-horizontal">
+            <div class="inputbox">
+              <input type="text" class="form-control" placeholder="Member Name" id="teamname" required autofocus>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" id="create">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <!-- Copyright Section -->
 <div id="footerSection">
