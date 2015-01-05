@@ -64,6 +64,22 @@ public class BaseDatabaseObject {
         statement.executeUpdate();
     }
 
+    public void fromResultSet(ResultSet resultSet) throws SQLException, IllegalAccessException {
+        Field fields[] = this.getClass().getFields();
+        for (int i = 0; i < fields.length; i++) {
+            if (fields[i].getType().equals(int.class)) {
+                fields[i].set(this, resultSet.getInt(i));
+            } else if (fields[i].getType().equals(String.class)) {
+                fields[i].set(this, resultSet.getString(i));
+            } else if (fields[i].getType().equals(Date.class)) {
+                fields[i].set(this, resultSet.getDate(i));
+            } else if (fields[i].getType().equals(Time.class)) {
+                fields[i].set(this, resultSet.getTime(i));
+            }
+        }
+
+    }
+
     public void insert(String tableName) throws SQLException, UnknownHostException, IllegalAccessException {
         Field fields[] = this.getClass().getFields();
         ArrayList<Field> fieldList = new ArrayList<Field>();

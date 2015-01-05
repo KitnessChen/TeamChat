@@ -26,14 +26,17 @@
       <file leaf-file-name="BaseDatabaseObject.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dbobject/BaseDatabaseObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4395018" vertical-offset="133" max-vertical-offset="2052">
-              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.6761566" vertical-offset="1045" max-vertical-offset="2489">
+              <caret line="75" column="64" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
               <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#542#543#0" expanded="true" />
+                <element signature="e#575#576#0" expanded="true" />
                 <element signature="e#968#975#0" expanded="true" />
-                <element signature="e#2584#2591#0" expanded="true" />
-                <marker date="1420455327769" expanded="true" signature="692:741" placeholder="delete from ..." />
-                <marker date="1420455327769" expanded="true" signature="1477:1520" placeholder="update set m..." />
-                <marker date="1420455327769" expanded="true" signature="3322:3418" placeholder="insert into ..." />
+                <element signature="e#3308#3315#0" expanded="true" />
+                <marker date="1420456599328" expanded="true" signature="692:741" placeholder="delete from ..." />
+                <marker date="1420456599328" expanded="true" signature="1477:1520" placeholder="update set m..." />
+                <marker date="1420456599328" expanded="true" signature="4046:4142" placeholder="insert into ..." />
               </folding>
             </state>
           </provider>
@@ -924,7 +927,7 @@
       <workItem from="1419472223289" duration="5325000" />
       <workItem from="1419490527225" duration="758000" />
       <workItem from="1419860086634" duration="4000" />
-      <workItem from="1420449555038" duration="3422000" />
+      <workItem from="1420449555038" duration="3999000" />
     </task>
     <task id="LOCAL-00001" summary="test idea commit">
       <created>1417434079972</created>
@@ -934,7 +937,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114483000" />
+    <option name="totallyTimeSpent" value="115060000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1421,14 +1424,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dbobject/BaseDatabaseObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4395018" vertical-offset="133" max-vertical-offset="2052">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.6761566" vertical-offset="1045" max-vertical-offset="2489">
+          <caret line="75" column="64" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#542#543#0" expanded="true" />
+            <element signature="e#575#576#0" expanded="true" />
             <element signature="e#968#975#0" expanded="true" />
-            <element signature="e#2584#2591#0" expanded="true" />
-            <marker date="1420455327769" expanded="true" signature="692:741" placeholder="delete from ..." />
-            <marker date="1420455327769" expanded="true" signature="1477:1520" placeholder="update set m..." />
-            <marker date="1420455327769" expanded="true" signature="3322:3418" placeholder="insert into ..." />
+            <element signature="e#3308#3315#0" expanded="true" />
+            <marker date="1420456599328" expanded="true" signature="692:741" placeholder="delete from ..." />
+            <marker date="1420456599328" expanded="true" signature="1477:1520" placeholder="update set m..." />
+            <marker date="1420456599328" expanded="true" signature="4046:4142" placeholder="insert into ..." />
           </folding>
         </state>
       </provider>
