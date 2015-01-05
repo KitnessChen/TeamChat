@@ -17,6 +17,10 @@ import java.sql.ResultSet;
  */
 public class TeamServlet extends BaseServlet {
 
+    public TeamServlet() {
+        super("/pages/front_end/team.jsp");
+    }
+
     public void addTeamMemberAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
         //TODO check if the person has the right to let another person in
 
@@ -31,6 +35,21 @@ public class TeamServlet extends BaseServlet {
             teamUser.insert();
 
             response.getWriter().write("team member added successfully");
+        }
+    }
+
+    public void removeTeamMemberAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        //TODO check if the person has the right to let another person in
+
+        int userId = Integer.parseInt(request.getParameter("userid"));
+        int teamId = Integer.parseInt(request.getParameter("teamid"));
+        if (!Validation.checkUserInTeam(userId, teamId)) {
+            response.getWriter().write("not in team");
+        } else {
+            TeamUser teamUser = new TeamUser();
+            teamUser.userId = userId;
+            teamUser.teamId = teamId;
+            response.getWriter().write("team member removed successfully");
         }
     }
 

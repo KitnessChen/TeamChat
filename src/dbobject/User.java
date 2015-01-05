@@ -13,7 +13,6 @@ import java.sql.Date;
 *
 * */
 public class User extends BaseDatabaseObject {
-    public int id;
     public String userName;
     public String password;
     public Date birthday;

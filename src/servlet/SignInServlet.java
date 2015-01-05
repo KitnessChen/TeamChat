@@ -32,7 +32,7 @@ public class SigninServlet extends BaseServlet {
                     .executeQuery();
 
             HttpSession session = request.getSession(true);
-            if (null != session.getAttribute("UserName")) {
+            if (null != session.getAttribute("username")) {
                 response.getWriter().write("already logged in");
             } else if (!resultSet.next() ||
                     !resultSet.getString("Password").equals(user.password)) {
