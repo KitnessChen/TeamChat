@@ -10,6 +10,9 @@ import java.lang.reflect.Method;
 
 /**
  * Created by whd on 2014/12/1.
+ * <p>对于这个项目里面所有的Servlet都使用这个类作为基类</p>
+ * <p>实现了对于jsp文件名的封装，地址栏呈现的不是带有jsp后缀的地址而是带有功能性描述的域名，比如/team</p>
+ * <p>通过java的反射机制实现了通过request数据中的action域来调用对应处理方法的功能，这样比起if等方式更加优美</p>
  */
 public class BaseServlet extends HttpServlet {
     private String jspLocation;

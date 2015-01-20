@@ -6,10 +6,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
+ * <pre>
  * Created by whd on 2014/12/1.
+ * 提供了getConnection这个方法
+ * </pre>
  */
 public class Database {
 
+    /**
+     * 返回与数据库连接的一个connection
+     * @return 与默认数据库的一个connection
+     * @throws UnknownHostException
+     * @throws SQLException
+     */
     public static Connection getConnection() throws UnknownHostException, SQLException {
         try {
             Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");

@@ -31,9 +31,8 @@
                     'teamid': $("#getteamid").val()
                 };
                 $.get("/team", parameters, function (data) {
-                    for (var i in data.memberList) {
-                        console.log(data.memberList[i]);
-                        $('#container')[0].innerHTML += data.memberList[i].username + ",";
+                    for (var i in data.memberlist) {
+                        console.log(data.memberlist[i]);
                     }
                 }, "json");
             });
@@ -43,8 +42,8 @@
                     'userid': $("#getuserid").val()
                 };
                 $.get("/team", parameters, function (data) {
-                    for (var i in data.teamList) {
-                        console.log(data.teamList[i]);
+                    for (var i in data.teamlist) {
+                        console.log(data.teamlist[i]);
                     }
                 }, "json");
             });
