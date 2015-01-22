@@ -17,14 +17,28 @@ import java.lang.reflect.Method;
 public class BaseServlet extends HttpServlet {
     private String jspLocation;
 
+    /**
+     * 如果构造函数中没有指定jsp文件路径的话默认跳转到404页面
+     */
     public BaseServlet() {
         this.jspLocation = "/pages/front_end/404.jsp";
     }
 
+    /**
+     *
+     * @param jspLocation 与该域名对应的jsp文件路径
+     */
     public BaseServlet(String jspLocation) {
         this.jspLocation = jspLocation;
     }
 
+    /**
+     * 把get请求根据参数里面的action域提交给相应的以Action为后缀的函数处理
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String actionName = request.getParameter("action");
         response.setContentType("text/html;charset=utf-8");
@@ -46,6 +60,13 @@ public class BaseServlet extends HttpServlet {
         }
     }
 
+    /**
+     * 把post请求根据参数里面的action域提交给相应的以Action为后缀的函数处理
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String actionName = request.getParameter("action");
         response.setContentType("text/html;charset=utf-8");

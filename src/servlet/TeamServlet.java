@@ -21,6 +21,9 @@ import java.sql.ResultSet;
  */
 public class TeamServlet extends BaseServlet {
 
+    /**
+     * 显示的页面
+     */
     public TeamServlet() {
         super("/pages/front_end/team.jsp");
     }
@@ -206,11 +209,29 @@ public class TeamServlet extends BaseServlet {
             array.put(new Team().fromResultSet(resultSet).toJSONObject());
         }
         result.put("teamlist", array);
-        System.out.println(result.toString());
         response.getWriter().write(result.toString());
     }
 
+    /**
+     * 搜索队伍
+     * @param request 需要参数teamname
+     * @param response 数据格式
+     *                 {teamlist:[, , ]...}
+     * @throws Exception
+     */
     public void searchTeamAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        String teamName = request.getParameter("teamname");
+        ResultSet resultSet = new Query()
+                .from("Teams")
+                .where("TeamName", "like", "%" + teamName + "%")
+                .executeQuery();
 
+        JSONObject result = new JSONObject();
+        JSONArray array = new JSONArray();
+        while (resultSet.next()) {
+            array.put(new Team().fromResultSet(resultSet).toJSONObject());
+        }
+        result.put("teamlist", array);
+        response.getWriter().write(result.toString());
     }
 }

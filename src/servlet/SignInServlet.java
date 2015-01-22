@@ -15,10 +15,23 @@ import java.sql.ResultSet;
 
 public class SigninServlet extends BaseServlet {
 
+    /**
+     * 显示的页面
+     */
     public SigninServlet() {
         super("/pages/front_end/signin.jsp");
     }
 
+    /**
+     * 完成登录的功能，并且设置session里面的username和userid
+     *
+     * @param request  <ol>
+     *                 <li>需要参数username</li>
+     *                 <li>需要参数password</li>
+     *                 </ol>
+     * @param response
+     * @throws Exception
+     */
     public void signinAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
         User user = new User();
         user.userName = request.getParameter("username");

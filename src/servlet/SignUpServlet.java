@@ -13,10 +13,24 @@ import java.sql.SQLException;
  */
 public class SignupServlet extends BaseServlet {
 
+    /**
+     * 注册页面
+     */
     public SignupServlet() {
         super("/pages/front_end/signup.jsp");
     }
 
+    /**
+     * 实现了注册账号的功能
+     *
+     * @param request  <ol>
+     *                 <li>参数需要username</li>
+     *                 <li>参数需要password</li>
+     *                 <li>参数需要email</li>
+     *                 </ol>
+     * @param response
+     * @throws Exception
+     */
     protected void signupAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
         User user = new User();
         user.userName = request.getParameter("username");

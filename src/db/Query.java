@@ -16,7 +16,6 @@ public class Query {
     boolean hasWhere, hasOrder, hasFrom;
 
     /**
-     *
      * @param connection 为了线程安全，用已有的connection初始化Query
      */
     public Query(Connection connection) {
@@ -29,6 +28,7 @@ public class Query {
 
     /**
      * 取一个新的connection来初始化Query
+     *
      * @throws Exception
      */
     public Query() throws Exception {
@@ -37,6 +37,7 @@ public class Query {
 
     /**
      * 相当于sql语句里面的from table
+     *
      * @param tableName from tableName
      * @return 添加from部分之后的Query
      */
@@ -53,8 +54,9 @@ public class Query {
 
     /**
      * 按某个条件对两个表连接，条件为A.x operator B.y
+     *
      * @param fieldName1 A.x A为一个表的名字，x为条件中A表要比较的域
-     * @param operator 用来比较的运算符，比如>,=,<等等
+     * @param operator   用来比较的运算符，比如>,=,<等等
      * @param fieldName2 B.y B为一个表的名字，y为条件中B表要比较的域
      * @return 添加join部分之后的Query
      */
@@ -71,9 +73,10 @@ public class Query {
 
     /**
      * where条件从句,比较的值为String
+     *
      * @param fieldName 与条件有关的域的名字
-     * @param operator 比较运算符
-     * @param value 比较的值
+     * @param operator  比较运算符
+     * @param value     比较的值
      * @return 添加where部分之后的Query
      */
     public Query where(String fieldName, String operator, String value) {
@@ -82,16 +85,19 @@ public class Query {
             queryString.append(" where ");
         }
         queryString.append(fieldName);
+        queryString.append(" ");
         queryString.append(operator);
+        queryString.append(" ");
         queryString.append("\'" + value + "\'");
         return this;
     }
-    
+
     /**
      * where条件从句,比较的值为int
+     *
      * @param fieldName 与条件有关的域的名字
-     * @param operator 比较运算符
-     * @param value 比较的值
+     * @param operator  比较运算符
+     * @param value     比较的值
      * @return 添加where部分之后的Query
      */
     public Query where(String fieldName, String operator, int value) {
@@ -100,21 +106,26 @@ public class Query {
             queryString.append(" where ");
         }
         queryString.append(fieldName);
+        queryString.append(" ");
         queryString.append(operator);
+        queryString.append(" ");
         queryString.append(value);
         return this;
     }
 
     /**
      * 添加一个and
+     *
      * @return 添加and部分之后的Query
      */
     public Query and() {
         queryString.append(" and ");
         return this;
     }
+
     /**
      * 添加一个or
+     *
      * @return 添加or部分之后的Query
      */
     public Query or() {
@@ -124,6 +135,7 @@ public class Query {
 
     /**
      * 添加order by从句
+     *
      * @param fieldName 要排序的域的名字
      * @param direction 排序的方向: asc/desc
      * @return 添加order by部分之后的Query
@@ -141,6 +153,7 @@ public class Query {
 
     /**
      * 添加top从句,相当于mysql里面的limit
+     *
      * @param top top x里面的x
      * @return 添加了top从句之后的Query
      */
@@ -151,7 +164,21 @@ public class Query {
     }
 
     /**
+     * 在sql语句末尾添加一个字符串，用来实现一些用上面的函数难以实现的功能
+     *
+     * @param string 要在sql末尾添加的字符串
+     * @return
+     */
+    public Query str(String string) {
+        queryString.append(" ");
+        queryString.append(string);
+        queryString.append(" ");
+        return this;
+    }
+
+    /**
      * 执行当前拼接出来的sql查询语句，返回执行结果ResultSet
+     *
      * @return ResultSet，查询结果
      * @throws Exception
      */
