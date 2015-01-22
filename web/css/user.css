@@ -85,6 +85,15 @@ border-bottom: 0;
   padding-right: 10px;
 }
 .desk-container .row .col-md-7 h4{margin-bottom: 20px; margin-left:20px;}
+.desk-container .user-profile{
+  padding-left:20px;
+  padding-top:10px;
+  font-size:20px;
+}
+.desk-container .user-profile .form-group{
+  margin-left:0;
+}
+
 
 #footerSection{text-align:center; padding:70px 0 0;}
 #footerSection .span8{ float:none; margin:0 auto;}

@@ -55,73 +55,29 @@
   </div>
 
 <div class="desk-container">
-    <h1>Edit Profile</h1>
+    <h1>User Profile</h1>
     <hr>
-  <div class="row">
-      <!-- left column -->
-      <div class="col-md-3">
-        <div class="text-center">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="avatar img-circle" alt="avatar" style="width: 100px; height: 100px;">
-          <h6>Upload a different photo...</h6>
-          
-          <input type="file" class="form-control">
-        </div>
-      </div>
-      
-      <!-- edit form column -->
-      <div class="col-md-7 personal-info">
-        <h4>Personal info</h4>
-        
+    <div class="user-profile">
         <form class="form-horizontal" role="form">
           <div class="form-group">
-            <label class="col-lg-3 control-label">First name:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" placeholder="firstname">
-            </div>
+            <p>Username: %username%</p>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Last name:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" placeholder="lastname">
-            </div>
+            <p>Email: %email address%</p>
+          </div>
+          <hr>
+          <div class="form-group">
+            <p>First name: %first name%</p>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Email:</label>
-            <div class="col-lg-8">
-              <input class="form-control" type="text" placeholder="example@gmail.com">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Username:</label>
-            <div class="col-md-8">
-              <input class="form-control" type="text" placeholder="username">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Password:</label>
-            <div class="col-md-8">
-              <input class="form-control" type="password" placeholder="******">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label">Confirm password:</label>
-            <div class="col-md-8">
-              <input class="form-control" type="password" placeholder="******">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-3 control-label"></label>
-            <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
-              <span></span>
-              <input type="reset" class="btn btn-default" value="Cancel">
-            </div>
+            <p>Last name: %last name%</p>
           </div>
         </form>
-      </div>
+        <button class="btn btn-primary" value="Settings" href="/settings">
+        <input type="button" class="btn btn-default" value="Back to home page">
+    </div>
   </div>
-<hr>
-  </div>
+
 </body>
 
 
