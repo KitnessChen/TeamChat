@@ -28,6 +28,7 @@
     <script src="/js/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="/js/bootstrap-dropdown.js" type="text/javascript"></script>
+    <script src="/js/message.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -62,7 +63,7 @@
 </div>
 
 
-<div class="desk-container">
+  <div class="desk-container">
     <div class="row">
         <div class="col-md-3">
             <div class="span2">
@@ -97,6 +98,31 @@
                 </div>
             </div>
             <div class="message-box">
+                <div class="panel panel-default message">
+                    <div class="panel-body">
+                        test
+                    </div>
+                </div>
+                <div class="panel panel-default message">
+                    <div class="panel-body">
+                        test
+                    </div>
+                </div>
+                <div class="panel panel-default message">
+                    <div class="panel-body">
+                        test
+                    </div>
+                </div>
+                <div class="panel panel-default message">
+                    <div class="panel-body">
+                        test
+                    </div>
+                </div>
+                <div class="panel panel-default message">
+                    <div class="panel-body">
+                        test
+                    </div>
+                </div>
                 <div class="panel panel-default message">
                     <div class="panel-body">
                         test
